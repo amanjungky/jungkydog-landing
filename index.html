@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>청담펫부티크 · 정키독 | 프리미엄 반려견 용품 &amp; 업사이클링</title>
+  <meta name="description" content="사회적 가치와 내 아이의 안전을 동시에 챙기는 브랜드. 안전 · 편안함 · 유니크한 디자인의 프리미엄 반려견 하네스, 정키독.">
+  <meta property="og:title" content="정키독 · 청담펫부티크">
+  <meta property="og:description" content="프리미엄 반려견 용품 &amp; 업사이클링">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Gochi+Hand&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sky: #5FA8E0;
+      --sky-deep: #3A83BC;
+      --sky-soft: #A8CDEB;
+      --crown-red: #E64545;
+      --crown-deep: #BB3232;
+      --sun: #F5C544;
+      --sun-deep: #D9A820;
+      --ink: #1A1A1A;
+      --paper: #FFFFFF;
+      --soft-bg: #F7F5F0;
+      --soft-gray: #F5F5F5;
+      --text: #1F1F1F;
+      --text-mid: #5F5F5F;
+      --text-light: #9A9A9A;
+      --line: rgba(26,26,26,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', sans-serif;
+      color: var(--text);
+      background: var(--paper);
+      line-height: 1.75;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      letter-spacing: -0.2px;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 50px;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: all 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 2px 30px rgba(26,26,26,0.08);
+      padding: 12px 50px;
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-logo img { width: 44px; height: auto; }
+    .nav-logo-text {
+      font-family: 'Gochi Hand', cursive;
+      font-size: 26px;
+      color: var(--sky-deep);
+      letter-spacing: 1px;
+    }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500;
+      color: var(--text-mid);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--sky-deep); }
+
+    .nav-cta {
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 13px; font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+    .nav-cta:hover {
+      background: var(--sky-deep);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none; background: none; border: none;
+      cursor: pointer; width: 28px; height: 20px; position: relative;
+    }
+    .nav-toggle span {
+      display: block; width: 100%; height: 2px;
+      background: var(--ink); position: absolute; left: 0;
+      transition: all 0.3s; border-radius: 2px;
+    }
+    .nav-toggle span:nth-child(1) { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 9px; }
+    .nav-toggle span:nth-child(3) { top: 18px; }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--paper);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -100px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(95,168,224,0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -140px; left: 15%;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,197,68,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 130px 50px 80px 80px;
+      max-width: 680px;
+      position: relative; z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 13px; font-weight: 600;
+      font-style: italic;
+      color: var(--crown-red);
+      letter-spacing: 3px;
+      margin-bottom: 26px;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .hero-tag::before {
+      content: '♛';
+      font-size: 18px;
+      color: var(--crown-red);
+    }
+
+    .hero-title {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 54px; line-height: 1.2; font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 22px;
+      letter-spacing: -1.3px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--sky-deep);
+    }
+    .hero-title .hand {
+      font-family: 'Gochi Hand', cursive;
+      color: var(--crown-red);
+      font-weight: 400;
+      font-size: 58px;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-mid);
+      margin-bottom: 18px;
+      line-height: 1.85;
+    }
+    .hero-sub strong { color: var(--ink); font-weight: 700; }
+
+    .hero-values {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 36px;
+    }
+    .hero-value {
+      background: var(--soft-gray);
+      color: var(--ink);
+      font-size: 13px; font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 50px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 15px; font-weight: 700;
+      padding: 16px 34px;
+      border: none; border-radius: 50px;
+      transition: all 0.3s;
+      box-shadow: 0 8px 24px rgba(26,26,26,0.18);
+    }
+    .btn-primary:hover {
+      background: var(--sky-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(58,131,188,0.28);
+    }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--ink);
+      font-size: 15px; font-weight: 700;
+      padding: 15px 32px;
+      border: 1.5px solid var(--ink);
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 100px 60px 60px 0;
+      z-index: 1;
+    }
+    .hero-visual-frame {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+    }
+    .hero-visual-frame img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(26,26,26,0.15);
+    }
+    .hero-badge {
+      position: absolute;
+      top: -18px; right: -18px;
+      background: var(--crown-red);
+      color: white;
+      width: 104px; height: 104px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      font-family: 'Gochi Hand', cursive;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 10px 28px rgba(230,69,69,0.4);
+      transform: rotate(12deg);
+      line-height: 1.25;
+      z-index: 3;
+    }
+    .hero-badge small {
+      font-size: 11px;
+      opacity: 0.9;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      letter-spacing: 2px;
+    }
+
+    /* ── Section base ── */
+    .section-pad { padding: 120px 80px; }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-size: 13px; font-weight: 600;
+      font-style: italic;
+      color: var(--sky-deep);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 42px; line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 22px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+    .section-title em {
+      font-style: normal;
+      color: var(--sky-deep);
+    }
+    .section-title .hand {
+      font-family: 'Gochi Hand', cursive;
+      color: var(--crown-red);
+      font-weight: 400;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-mid);
+      max-width: 640px;
+      line-height: 1.9;
+    }
+
+    /* ── Story ── */
+    .story {
+      background: var(--soft-bg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .story-visual {
+      text-align: center;
+      position: relative;
+    }
+    .story-visual img {
+      max-width: 320px;
+      width: 100%;
+      margin: 0 auto;
+      filter: drop-shadow(0 10px 30px rgba(26,26,26,0.08));
+    }
+    .story-visual::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(95,168,224,0.12) 0%, transparent 60%);
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+    .story-visual img { position: relative; z-index: 1; }
+
+    .story-points {
+      list-style: none;
+      margin-top: 28px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .story-points li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: 15.5px;
+      color: var(--text);
+      line-height: 1.75;
+    }
+    .story-points li::before {
+      content: '♛';
+      flex-shrink: 0;
+      color: var(--crown-red);
+      font-size: 18px;
+      margin-top: 2px;
+    }
+
+    /* ── Products ── */
+    .products {
+      background: var(--paper);
+      text-align: center;
+    }
+    .products-head { margin-bottom: 70px; }
+    .products-head .section-desc { margin: 0 auto; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s;
+      text-align: left;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 44px rgba(26,26,26,0.1);
+      border-color: var(--sky);
+    }
+
+    .product-card-img {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: var(--soft-bg);
+    }
+    .product-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .product-card:hover .product-card-img img { transform: scale(1.06); }
+
+    .product-label {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Playfair Display', serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px;
+      padding: 6px 12px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+    .product-label.red { background: var(--crown-red); }
+    .product-label.sun { background: var(--sun); color: var(--ink); }
+
+    .product-card-body { padding: 22px 20px 26px; }
+    .product-card-tag {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--sky-deep);
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .product-card h3 {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 19px; font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── Values ── */
+    .values {
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .values::before {
+      content: '';
+      position: absolute; top: -120px; right: -100px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(95,168,224,0.2) 0%, transparent 70%);
+    }
+    .values .section-tag { color: var(--sun); }
+    .values .section-title { color: var(--paper); }
+    .values .section-title em { color: var(--sky); }
+    .values .section-desc { color: rgba(255,255,255,0.72); }
+
+    .values-head { margin-bottom: 70px; position: relative; z-index: 2; }
+    .values-head .section-desc { margin: 0 auto; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      position: relative; z-index: 2;
+    }
+    .value-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 40px 30px;
+      border-radius: 22px;
+      transition: all 0.3s;
+    }
+    .value-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--sky);
+      transform: translateY(-6px);
+    }
+    .value-icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px;
+      background: var(--sky);
+      color: var(--paper);
+    }
+    .value-card:nth-child(2) .value-icon { background: var(--crown-red); }
+    .value-card:nth-child(3) .value-icon { background: var(--sun); color: var(--ink); }
+
+    .value-card h3 {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--paper);
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+    }
+
+    /* ── Craft (업사이클링 프로세스) ── */
+    .craft {
+      background: var(--soft-bg);
+    }
+    .craft-head { text-align: center; margin-bottom: 70px; }
+    .craft-head .section-desc { margin: 0 auto; }
+
+    .craft-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .craft-step {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--paper);
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      transition: all 0.3s;
+    }
+    .craft-step:hover {
+      transform: translateY(-4px);
+      border-color: var(--sky);
+    }
+    .craft-num {
+      font-family: 'Gochi Hand', cursive;
+      font-size: 48px;
+      color: var(--crown-red);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .craft-step h4 {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 17px; font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .craft-step p {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── Newsletter (DB 수집 폼) ── */
+    .newsletter {
+      background: linear-gradient(135deg, var(--sky) 0%, var(--sky-deep) 100%);
+      color: var(--paper);
+      padding: 120px 80px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .newsletter::before {
+      content: '';
+      position: absolute; top: -100px; left: 10%;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,197,68,0.18) 0%, transparent 70%);
+    }
+    .newsletter::after {
+      content: '';
+      position: absolute; bottom: -120px; right: 12%;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(230,69,69,0.2) 0%, transparent 70%);
+    }
+
+    .newsletter-inner { position: relative; z-index: 2; max-width: 880px; margin: 0 auto; }
+
+    .newsletter .section-tag { color: var(--sun); }
+    .newsletter-title {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 46px; font-weight: 800;
+      color: var(--paper);
+      margin-bottom: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.8px;
+    }
+    .newsletter-title .hand {
+      font-family: 'Gochi Hand', cursive;
+      color: var(--sun);
+      font-weight: 400;
+    }
+    .newsletter-desc {
+      font-size: 17px;
+      color: rgba(255,255,255,0.88);
+      max-width: 640px;
+      margin: 0 auto 46px;
+      line-height: 1.9;
+    }
+
+    .newsletter-form-wrap {
+      background: var(--paper);
+      border-radius: 20px;
+      padding: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+      box-shadow: 0 20px 50px rgba(26,26,26,0.2);
+    }
+    .newsletter-form-wrap iframe {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .newsletter-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      font-style: italic;
+    }
+
+    .newsletter-placeholder {
+      background: rgba(255,255,255,0.12);
+      border: 2px dashed rgba(255,255,255,0.35);
+      border-radius: 16px;
+      padding: 60px 30px;
+      color: var(--paper);
+    }
+    .newsletter-placeholder h4 {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 20px; font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--sun);
+    }
+    .newsletter-placeholder p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .newsletter-placeholder code {
+      background: rgba(0,0,0,0.25);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--sun);
+    }
+
+    /* ── Contact/Footer ── */
+    .contact {
+      background: var(--paper);
+      text-align: center;
+      padding: 100px 80px;
+    }
+    .contact-title {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 36px; font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 14px;
+      letter-spacing: -0.6px;
+    }
+    .contact-desc {
+      font-size: 16px;
+      color: var(--text-mid);
+      margin-bottom: 40px;
+    }
+    .contact-channels {
+      display: flex; justify-content: center; gap: 14px;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .contact-channel {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--soft-bg);
+      padding: 16px 26px;
+      border-radius: 50px;
+      transition: all 0.3s;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .contact-channel:hover {
+      background: var(--ink);
+      color: var(--paper);
+      transform: translateY(-2px);
+    }
+    .contact-channel svg { width: 18px; height: 18px; fill: currentColor; }
+
+    footer {
+      background: var(--ink);
+      padding: 40px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .footer-brand {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .footer-brand img { width: 38px; filter: invert(1) brightness(1.6); }
+    .footer-brand-text {
+      font-family: 'Gochi Hand', cursive;
+      color: var(--sky);
+      font-size: 22px;
+    }
+    .footer-copy {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── Animations ── */
+    .fade-up {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-d1 { transition-delay: 0.1s; }
+    .fade-up-d2 { transition-delay: 0.2s; }
+    .fade-up-d3 { transition-delay: 0.3s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .section-pad { padding: 90px 40px; }
+      .hero-content { padding: 120px 40px 60px 50px; }
+      .hero-title { font-size: 44px; }
+      .hero-title .hand { font-size: 48px; }
+      .hero-visual { padding: 100px 30px 40px 0; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .craft-steps { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: 1fr; gap: 16px; }
+      .story { grid-template-columns: 1fr; gap: 40px; }
+      .newsletter { padding: 90px 40px; }
+      .contact { padding: 80px 40px; }
+      footer { padding: 36px 40px; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 22px; }
+      nav.scrolled { padding: 10px 22px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-logo-text { font-size: 22px; }
+      .nav-logo img { width: 38px; }
+
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-content { padding: 110px 22px 40px; }
+      .hero-title { font-size: 34px; line-height: 1.3; }
+      .hero-title .hand { font-size: 38px; }
+      .hero-sub { font-size: 15px; }
+      .hero-visual { padding: 0 22px 60px; }
+      .hero-badge { width: 78px; height: 78px; font-size: 12px; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+
+      .section-pad { padding: 70px 22px; }
+      .section-title { font-size: 28px; }
+
+      .products-grid { grid-template-columns: 1fr; }
+      .product-card-img { height: 240px; }
+      .craft-steps { grid-template-columns: 1fr; }
+
+      .newsletter { padding: 70px 22px; }
+      .newsletter-title { font-size: 28px; }
+      .contact { padding: 70px 22px; }
+      .contact-channels { flex-direction: column; align-items: stretch; }
+
+      footer { flex-direction: column; text-align: center; padding: 30px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="정키독">
+      <span class="nav-logo-text">정키독</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#story">브랜드</a></li>
+      <li><a href="#products">제품</a></li>
+      <li><a href="#values">가치</a></li>
+      <li><a href="#craft">업사이클링</a></li>
+      <li><a href="#newsletter" class="nav-cta">소식 받기 →</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Premium Dog Harness · Upcycling</span>
+      <h1 class="hero-title">
+        프리미엄 반려견 용품<br>
+        그리고 <span class="hand">업사이클링</span>
+      </h1>
+      <p class="hero-sub">
+        사회적 가치와 <strong>내 아이의 안전</strong>을 동시에 챙기는 브랜드.<br>
+        청담펫부티크 · 정키독이 제안하는 특별한 하네스를 만나보세요.
+      </p>
+      <div class="hero-values">
+        <span class="hero-value">✓ 안전</span>
+        <span class="hero-value">✓ 편안함</span>
+        <span class="hero-value">✓ 유니크한 디자인</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#newsletter" class="btn-primary">신제품 소식 받기 →</a>
+        <a href="#products" class="btn-outline">제품 둘러보기</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual-frame">
+        <div class="hero-badge">
+          <small>Since</small>
+          청담<br>
+          부티크
+        </div>
+        <img src="images/products/rocket.jpg" alt="우주선 하네스 · 정키독 대표 제품">
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="story section-pad" id="story">
+    <div class="story-visual fade-up">
+      <img src="images/logo.png" alt="정키독 로고">
+    </div>
+    <div class="fade-up fade-up-d1">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title">손으로 짓는 <em>정키독</em>의<br><span class="hand">작은 왕관</span></h2>
+      <p class="section-desc">
+        정키독은 내 아이가 매일 두르는 하네스를
+        명품 편집숍의 한 벌처럼 귀하게 만듭니다.
+        안전한 구조와 편안한 착용감은 기본,
+        업사이클링 원단과 손자수 포인트로 세상에 하나뿐인 유니크함을 더합니다.
+      </p>
+      <ul class="story-points">
+        <li>청담의 감각, 펫부티크의 정성</li>
+        <li>남은 원단을 다시 살리는 업사이클링 철학</li>
+        <li>한 땀 한 땀 손으로 올린 자수 포인트</li>
+        <li>내 반려견만의 왕관 같은 특별함</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products section-pad" id="products">
+    <div class="products-head">
+      <span class="section-tag">Signature Harness</span>
+      <h2 class="section-title">네 가지 <em>시그니처</em> 하네스</h2>
+      <p class="section-desc">
+        체크 원단의 클래식함 위에 한 땀 한 땀 올린 자수 포인트.
+        반려견의 개성을 표현하는 네 가지 테마.
+      </p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-up">
+        <div class="product-card-img">
+          <span class="product-label">Signature</span>
+          <img src="images/products/rocket.jpg" alt="우주선 하네스">
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-tag">Rocket</span>
+          <h3>우주선 하네스</h3>
+          <p>우주로 떠나는 꿈을 담은 로켓 자수 포인트. 블루 체크 원단과 옐로우 자수의 완벽한 조화.</p>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-d1">
+        <div class="product-card-img">
+          <span class="product-label red">Hero</span>
+          <img src="images/products/superman.jpg" alt="슈퍼맨 하네스">
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-tag">Superman</span>
+          <h3>슈퍼맨 하네스</h3>
+          <p>우리집 작은 영웅을 위한 슈퍼맨 패치. 특별한 순간에 어울리는 시그니처 디자인.</p>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-d2">
+        <div class="product-card-img">
+          <span class="product-label sun">Cute</span>
+          <img src="images/products/minions.jpg" alt="미니언즈 하네스">
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-tag">Minions</span>
+          <h3>미니언즈 하네스</h3>
+          <p>사랑스러운 노란 친구를 하네스에. 산책길의 모든 시선을 사로잡는 귀여움 한 스푼.</p>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-d3">
+        <div class="product-card-img">
+          <span class="product-label">Set</span>
+          <img src="images/products/set.jpg" alt="3종 세트 하네스">
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-tag">Best Set</span>
+          <h3>정키독 3종 세트</h3>
+          <p>대표 시그니처 3종을 한 번에. 선물용으로도, 내 반려견의 기분 전환용으로도 좋은 스페셜 세트.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="values section-pad" id="values">
+    <div class="values-head">
+      <span class="section-tag">Our Values</span>
+      <h2 class="section-title">우리가 지키는 <em>세 가지</em></h2>
+      <p class="section-desc">
+        귀여운 디자인 뒤에 숨은 타협 없는 원칙.
+        내 아이가 매일 두르는 것이기에 더 철저하게.
+      </p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fade-up">
+        <div class="value-icon">🛡</div>
+        <h3>안전</h3>
+        <p>반려견의 몸에 부담 없는 구조 설계와 견고한 마감. 산책 내내 믿고 맡길 수 있는 안정성.</p>
+      </div>
+      <div class="value-card fade-up fade-up-d1">
+        <div class="value-icon">☁</div>
+        <h3>편안함</h3>
+        <p>부드럽고 숨 쉬는 원단, 피부에 자극 없는 마감. 오래 두르고 있어도 편안한 착용감.</p>
+      </div>
+      <div class="value-card fade-up fade-up-d2">
+        <div class="value-icon">✧</div>
+        <h3>유니크한 디자인</h3>
+        <p>한 땀 한 땀 올린 손자수 패치, 체크 원단의 클래식한 매력. 세상 어디에도 없는 유일함.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craft / Upcycling -->
+  <section class="craft section-pad" id="craft">
+    <div class="craft-head">
+      <span class="section-tag">Upcycling Craft</span>
+      <h2 class="section-title">남은 원단이 <em>왕관</em>이 되는 <span class="hand">네 단계</span></h2>
+      <p class="section-desc">
+        버려질 뻔한 원단 한 조각이 내 아이의 가장 특별한 하네스로 태어나기까지.
+      </p>
+    </div>
+    <div class="craft-steps">
+      <div class="craft-step fade-up">
+        <div class="craft-num">01</div>
+        <h4>원단 수거</h4>
+        <p>의류 제작 후 남은<br>프리미엄 체크 원단 수거</p>
+      </div>
+      <div class="craft-step fade-up fade-up-d1">
+        <div class="craft-num">02</div>
+        <h4>재단 · 세척</h4>
+        <p>안전 기준에 맞춰<br>꼼꼼히 재단하고 세척</p>
+      </div>
+      <div class="craft-step fade-up fade-up-d2">
+        <div class="craft-num">03</div>
+        <h4>손자수 포인트</h4>
+        <p>테마별 자수 패치를<br>한 땀씩 올려 완성</p>
+      </div>
+      <div class="craft-step fade-up fade-up-d3">
+        <div class="craft-num">04</div>
+        <h4>품질 검수</h4>
+        <p>안전 · 편안함 확인 후<br>내 아이에게로</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter (DB 수집 핵심 섹션) -->
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter-inner">
+      <span class="section-tag">Stay Connected</span>
+      <h2 class="newsletter-title">
+        정키독의 <span class="hand">새 소식</span>을<br>
+        가장 먼저 받아보세요
+      </h2>
+      <p class="newsletter-desc">
+        신제품 출시, 한정판 패치, 세일 정보까지 —
+        정키독 뉴스레터 구독자에게만 드리는 특별한 혜택을 놓치지 마세요.
+      </p>
+
+      <!--
+        ⬇︎ Google Forms 임베드 자리
+        1. Google Forms에서 "이메일 · 반려견 이름 · 관심 제품" 등 받는 폼 생성
+        2. 보내기 → 임베드 HTML 아이콘(<>) 클릭
+        3. iframe의 src 속성값을 아래 IFRAME_SRC에 붙여넣기
+        4. 높이(height)는 폼 길이에 맞춰 조정
+
+        현재는 placeholder 상태 — 대표님이 Google Forms 만드신 후 src 교체하시면 됩니다.
+      -->
+      <div class="newsletter-form-wrap">
+        <iframe
+          id="gform"
+          src="about:blank"
+          height="820"
+          title="정키독 뉴스레터 구독 폼"
+          loading="lazy">
+          불러오는 중…
+        </iframe>
+        <div class="newsletter-placeholder" id="gform-placeholder">
+          <h4>📝 Google Forms 임베드 준비 완료</h4>
+          <p>
+            대표님께서 Google Forms에서 뉴스레터 구독 폼을 생성하신 후,<br>
+            <code>index.html</code>의 <code>iframe src</code>에 URL을 교체해주세요.<br><br>
+            예시: <code>https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true</code>
+          </p>
+        </div>
+      </div>
+
+      <p class="newsletter-note">
+        * 구독자에게만 제공되는 신제품 정보와 혜택을 보내드립니다. 언제든지 구독 취소 가능합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <span class="section-tag">Contact</span>
+    <h2 class="contact-title">더 궁금하신 것이 있으신가요?</h2>
+    <p class="contact-desc">스마트스토어·블로그에서 더 많은 정키독 이야기를 만나보세요.</p>
+    <div class="contact-channels">
+      <a href="https://smartstore.naver.com/jungkydog" target="_blank" rel="noopener" class="contact-channel">
+        <svg viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.156L16.624 24H24V0h-7.727v12.845z"/></svg>
+        스마트스토어
+      </a>
+      <a href="https://blog.naver.com/jungkydog" target="_blank" rel="noopener" class="contact-channel">
+        <svg viewBox="0 0 24 24"><path d="M20.4 3H3.6C2.7 3 2 3.7 2 4.6v14.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V4.6C22 3.7 21.3 3 20.4 3zm-4 11.4L13 10.3v4.1h-2v-6h2l3.4 4.1V8.4h2v6h-2z"/></svg>
+        네이버 블로그
+      </a>
+      <a href="mailto:swelljung@gmail.com" class="contact-channel">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        이메일 문의
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="정키독">
+      <div>
+        <div class="footer-brand-text">정키독 · Jungkydog</div>
+        <div class="footer-copy">© 2026 청담펫부티크 · 정키독. All rights reserved.</div>
+      </div>
+    </div>
+    <div class="footer-copy" style="text-align:right;">
+      프리미엄 반려견 용품 &amp; 업사이클링<br>
+      &nbsp;
+    </div>
+  </footer>
+
+  <script>
+    // Scroll nav
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      if (!links) return;
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '100%';
+        links.style.right = '22px';
+        links.style.background = '#FFFFFF';
+        links.style.padding = '18px 24px';
+        links.style.borderRadius = '14px';
+        links.style.boxShadow = '0 10px 30px rgba(26,26,26,0.12)';
+        links.style.gap = '14px';
+      }
+    }
+
+    // Fade-up observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Google Forms placeholder 처리
+    // iframe의 src가 about:blank이면 placeholder 표시, 실제 URL 들어가면 숨김
+    (function() {
+      const iframe = document.getElementById('gform');
+      const placeholder = document.getElementById('gform-placeholder');
+      if (iframe && iframe.src && iframe.src !== 'about:blank' && iframe.src !== window.location.href) {
+        iframe.style.display = 'block';
+        if (placeholder) placeholder.style.display = 'none';
+      } else {
+        iframe.style.display = 'none';
+      }
+    })();
+  </script>
+</body>
+</html>
