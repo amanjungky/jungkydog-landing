@@ -518,22 +518,39 @@
     }
     .craft-step {
       text-align: center;
-      padding: 30px 20px;
       background: var(--paper);
       border-radius: 20px;
       border: 1px solid var(--line);
       transition: all 0.3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
     .craft-step:hover {
       transform: translateY(-4px);
       border-color: var(--sky);
+      box-shadow: 0 14px 30px rgba(26,26,26,0.08);
     }
+    .craft-step-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--soft-gray);
+      position: relative;
+    }
+    .craft-step-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .craft-step:hover .craft-step-img img { transform: scale(1.05); }
+    .craft-step-body { padding: 22px 18px 26px; }
     .craft-num {
       font-family: 'Gochi Hand', cursive;
-      font-size: 48px;
+      font-size: 38px;
       color: var(--crown-red);
       line-height: 1;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     .craft-step h4 {
       font-family: 'Pretendard Variable', sans-serif;
@@ -545,6 +562,58 @@
       font-size: 13px;
       color: var(--text-mid);
       line-height: 1.7;
+    }
+
+    /* ── Mission (유기견 봉사) ── */
+    .mission {
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .mission-visual {
+      position: relative;
+    }
+    .mission-visual img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 18px 44px rgba(26,26,26,0.14);
+    }
+    .mission-visual::after {
+      content: '';
+      position: absolute;
+      bottom: -18px; right: -18px;
+      width: 140px; height: 140px;
+      background: var(--sun);
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0.85;
+    }
+    .mission-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--crown-red);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    .mission-list {
+      list-style: none;
+      margin-top: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mission-list li {
+      display: flex; gap: 12px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .mission-list li::before {
+      content: '🐾';
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     /* ── Newsletter (DB 수집 폼) ── */
@@ -670,21 +739,44 @@
       margin: 0 auto;
     }
     .contact-channel {
-      display: flex; align-items: center; gap: 10px;
-      background: var(--soft-bg);
+      --brand: var(--ink);
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--paper);
       padding: 16px 26px;
       border-radius: 50px;
+      border: 1.5px solid var(--line);
       transition: all 0.3s;
       font-size: 14.5px;
       font-weight: 600;
       color: var(--ink);
     }
-    .contact-channel:hover {
-      background: var(--ink);
-      color: var(--paper);
-      transform: translateY(-2px);
+    .contact-channel .brand-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--brand);
+      color: #fff;
+      flex-shrink: 0;
+      transition: transform 0.3s;
     }
-    .contact-channel svg { width: 18px; height: 18px; fill: currentColor; }
+    .contact-channel .brand-icon svg { width: 14px; height: 14px; fill: currentColor; }
+    .contact-channel:hover {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+    .contact-channel:hover .brand-icon {
+      background: #fff;
+      color: var(--brand);
+      transform: scale(1.08);
+    }
+
+    /* 브랜드별 고유색 */
+    .contact-channel.smartstore { --brand: #03C75A; }   /* 네이버 그린 */
+    .contact-channel.naver-blog { --brand: #03C75A; }   /* 네이버 블로그 */
+    .contact-channel.gmail      { --brand: #EA4335; }   /* Gmail 레드 */
 
     footer {
       background: var(--ink);
@@ -727,6 +819,7 @@
       .craft-steps { grid-template-columns: repeat(2, 1fr); }
       .values-grid { grid-template-columns: 1fr; gap: 16px; }
       .story { grid-template-columns: 1fr; gap: 40px; }
+      .mission { grid-template-columns: 1fr; gap: 50px; }
       .newsletter { padding: 90px 40px; }
       .contact { padding: 80px 40px; }
       footer { padding: 36px 40px; }
@@ -779,6 +872,7 @@
       <li><a href="#products">제품</a></li>
       <li><a href="#values">가치</a></li>
       <li><a href="#craft">업사이클링</a></li>
+      <li><a href="#mission">미션</a></li>
       <li><a href="#newsletter" class="nav-cta">소식 받기 →</a></li>
     </ul>
     <button class="nav-toggle" onclick="toggleMenu()" aria-label="메뉴">
@@ -831,12 +925,12 @@
       <p class="section-desc">
         정키독은 내 아이가 매일 두르는 하네스를
         명품 편집숍의 한 벌처럼 귀하게 만듭니다.
-        안전한 구조와 편안한 착용감은 기본,
-        업사이클링 원단과 손자수 포인트로 세상에 하나뿐인 유니크함을 더합니다.
+        <strong>은퇴한 소방관의 폐방화복</strong>을 다시 살리는 업사이클링,
+        그리고 한 땀 한 땀 올린 손자수 포인트로 세상에 하나뿐인 유니크함을 더합니다.
       </p>
       <ul class="story-points">
         <li>청담의 감각, 펫부티크의 정성</li>
-        <li>남은 원단을 다시 살리는 업사이클링 철학</li>
+        <li>폐방화복을 다시 살리는 업사이클링 철학</li>
         <li>한 땀 한 땀 손으로 올린 자수 포인트</li>
         <li>내 반려견만의 왕관 같은 특별함</li>
       </ul>
@@ -934,32 +1028,75 @@
   <section class="craft section-pad" id="craft">
     <div class="craft-head">
       <span class="section-tag">Upcycling Craft</span>
-      <h2 class="section-title">남은 원단이 <em>왕관</em>이 되는 <span class="hand">네 단계</span></h2>
+      <h2 class="section-title"><em>폐방화복</em>이 왕관이 되는 <span class="hand">네 단계</span></h2>
       <p class="section-desc">
-        버려질 뻔한 원단 한 조각이 내 아이의 가장 특별한 하네스로 태어나기까지.
+        은퇴한 소방관이 입던 방화복 한 조각이
+        내 아이의 가장 특별한 하네스로 태어나기까지.
       </p>
     </div>
     <div class="craft-steps">
       <div class="craft-step fade-up">
-        <div class="craft-num">01</div>
-        <h4>원단 수거</h4>
-        <p>의류 제작 후 남은<br>프리미엄 체크 원단 수거</p>
+        <div class="craft-step-img">
+          <img src="images/craft/design.jpg" alt="폐방화복 디자인 스케치">
+        </div>
+        <div class="craft-step-body">
+          <div class="craft-num">01</div>
+          <h4>디자인 · 설계</h4>
+          <p>방화복의 견고함을 살린<br>하네스 패턴 디자인</p>
+        </div>
       </div>
       <div class="craft-step fade-up fade-up-d1">
-        <div class="craft-num">02</div>
-        <h4>재단 · 세척</h4>
-        <p>안전 기준에 맞춰<br>꼼꼼히 재단하고 세척</p>
+        <div class="craft-step-img">
+          <img src="images/craft/workshop.jpg" alt="폐방화복 업사이클링 공방">
+        </div>
+        <div class="craft-step-body">
+          <div class="craft-num">02</div>
+          <h4>공방 작업</h4>
+          <p>은퇴한 방화복을<br>안전 기준에 맞춰 재단</p>
+        </div>
       </div>
       <div class="craft-step fade-up fade-up-d2">
-        <div class="craft-num">03</div>
-        <h4>손자수 포인트</h4>
-        <p>테마별 자수 패치를<br>한 땀씩 올려 완성</p>
+        <div class="craft-step-img">
+          <img src="images/craft/sewing.jpg" alt="폐방화복 봉제 작업">
+        </div>
+        <div class="craft-step-body">
+          <div class="craft-num">03</div>
+          <h4>한 땀 한 땀</h4>
+          <p>테마별 손자수 포인트를<br>한 땀씩 올려 완성</p>
+        </div>
       </div>
       <div class="craft-step fade-up fade-up-d3">
-        <div class="craft-num">04</div>
-        <h4>품질 검수</h4>
-        <p>안전 · 편안함 확인 후<br>내 아이에게로</p>
+        <div class="craft-step-img">
+          <img src="images/craft/result.jpg" alt="폐방화복으로 완성된 하네스">
+        </div>
+        <div class="craft-step-body">
+          <div class="craft-num">04</div>
+          <h4>완성 · 검수</h4>
+          <p>안전 · 편안함 확인 후<br>내 아이에게로</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Mission (유기견 봉사) -->
+  <section class="mission section-pad" id="mission">
+    <div class="mission-visual fade-up">
+      <img src="images/craft/rescue.jpg" alt="유기견 봉사 활동">
+    </div>
+    <div class="fade-up fade-up-d1">
+      <span class="section-tag">Our Mission</span>
+      <p class="mission-quote">For every paw that needs us</p>
+      <h2 class="section-title">하네스가 닿지 못한 곳에<br><em>마음</em>을 더합니다</h2>
+      <p class="section-desc">
+        정키독은 매장 너머에서도 멈추지 않습니다.
+        보호소의 아이들에게 직접 만든 하네스를 전하고,
+        유기견 봉사 활동에 꾸준히 함께합니다.
+      </p>
+      <ul class="mission-list">
+        <li>유기견 보호소 정기 봉사 · 산책 동행</li>
+        <li>판매 수익 일부를 동물복지 단체에 기부</li>
+        <li>방화복을 입던 이의 마음을 닮은, 따뜻한 보호의 브랜드</li>
+      </ul>
     </div>
   </section>
 
@@ -1016,16 +1153,22 @@
     <h2 class="contact-title">더 궁금하신 것이 있으신가요?</h2>
     <p class="contact-desc">스마트스토어·블로그에서 더 많은 정키독 이야기를 만나보세요.</p>
     <div class="contact-channels">
-      <a href="https://smartstore.naver.com/jungkydog" target="_blank" rel="noopener" class="contact-channel">
-        <svg viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.156L16.624 24H24V0h-7.727v12.845z"/></svg>
+      <a href="https://smartstore.naver.com/jungkydog" target="_blank" rel="noopener" class="contact-channel smartstore">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.156L16.624 24H24V0h-7.727v12.845z"/></svg>
+        </span>
         스마트스토어
       </a>
-      <a href="https://blog.naver.com/jungkydog" target="_blank" rel="noopener" class="contact-channel">
-        <svg viewBox="0 0 24 24"><path d="M20.4 3H3.6C2.7 3 2 3.7 2 4.6v14.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V4.6C22 3.7 21.3 3 20.4 3zm-4 11.4L13 10.3v4.1h-2v-6h2l3.4 4.1V8.4h2v6h-2z"/></svg>
+      <a href="https://blog.naver.com/jungkydog" target="_blank" rel="noopener" class="contact-channel naver-blog">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20.4 3H3.6C2.7 3 2 3.7 2 4.6v14.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V4.6C22 3.7 21.3 3 20.4 3zm-4 11.4L13 10.3v4.1h-2v-6h2l3.4 4.1V8.4h2v6h-2z"/></svg>
+        </span>
         네이버 블로그
       </a>
-      <a href="mailto:swelljung@gmail.com" class="contact-channel">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <a href="mailto:swelljung@gmail.com" class="contact-channel gmail">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        </span>
         이메일 문의
       </a>
     </div>

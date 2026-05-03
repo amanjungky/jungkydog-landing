@@ -13,16 +13,34 @@
 - **주요 목적**: ⭐ **잠재고객 DB 수집** (뉴스레터 구독)
 - **참고 레퍼런스**: 프라이탁·파타고니아·와일드원·플리츠마마
 
-## 섹션 구성 (8섹션 · DB 수집 최적화)
+## 섹션 구성 (9섹션 · DB 수집 최적화)
 
 1. **Nav** — 로고 + "소식 받기" CTA 고정
 2. **Hero** — 슬로건 + 대표 제품 이미지 + 뉴스레터 유도 버튼
-3. **Story** — 브랜드 스토리 + 4가지 가치
-4. **Products** — 시그니처 하네스 4종
+3. **Story** — 브랜드 스토리 + 폐방화복 업사이클링 정체성
+4. **Products** — 시그니처 하네스 4종 (고해상도 신규 사진)
 5. **Values** — 3가지 약속 (안전·편안함·유니크)
-6. **Craft** — 업사이클링 4단계 프로세스
-7. **Newsletter** ⭐ — Google Forms 임베드 · 메인 DB 수집
-8. **Contact** — 스마트스토어·블로그·이메일
+6. **Craft** — 폐방화복 업사이클링 4단계 (실제 공방 사진)
+7. **Mission** ⭐ — 유기견 봉사 + 사회적 가치
+8. **Newsletter** ⭐ — Google Forms 임베드 · 메인 DB 수집
+9. **Contact** — 스마트스토어·블로그·이메일
+
+## 이미지 자산
+
+```
+images/
+├─ logo.png            로고 (네비/푸터)
+├─ logo-mark.jpg       로고 마크 (신규, 예비)
+├─ favicon.png
+├─ products/           시그니처 4종 (1600px, 80% JPEG)
+│  ├─ rocket.jpg / superman.jpg / minions.jpg / set.jpg
+└─ craft/              업사이클링 + 미션 사진
+   ├─ design.jpg       폐방화복 디자인 스케치
+   ├─ workshop.jpg     공방 작업 전경
+   ├─ sewing.jpg       봉제 작업
+   ├─ result.jpg       완성된 하네스
+   └─ rescue.jpg       유기견 봉사 활동
+```
 
 ## 컬러 시스템 (로고 기반)
 
