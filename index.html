@@ -1,1242 +1,295 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>청담펫부티크 · 정키독 | 프리미엄 반려견 용품 &amp; 업사이클링</title>
-  <meta name="description" content="사회적 가치와 내 아이의 안전을 동시에 챙기는 브랜드. 안전 · 편안함 · 유니크한 디자인의 프리미엄 반려견 하네스, 정키독.">
-  <meta property="og:title" content="정키독 · 청담펫부티크">
-  <meta property="og:description" content="프리미엄 반려견 용품 &amp; 업사이클링">
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Gochi+Hand&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --sky: #5FA8E0;
-      --sky-deep: #3A83BC;
-      --sky-soft: #A8CDEB;
-      --crown-red: #E64545;
-      --crown-deep: #BB3232;
-      --sun: #F5C544;
-      --sun-deep: #D9A820;
-      --ink: #1A1A1A;
-      --paper: #FFFFFF;
-      --soft-bg: #F7F5F0;
-      --soft-gray: #F5F5F5;
-      --text: #1F1F1F;
-      --text-mid: #5F5F5F;
-      --text-light: #9A9A9A;
-      --line: rgba(26,26,26,0.12);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', sans-serif;
-      color: var(--text);
-      background: var(--paper);
-      line-height: 1.75;
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      letter-spacing: -0.2px;
-    }
-
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ── Nav ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 18px 50px;
-      display: flex; justify-content: space-between; align-items: center;
-      transition: all 0.4s;
-    }
-    nav.scrolled {
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 2px 30px rgba(26,26,26,0.08);
-      padding: 12px 50px;
-    }
-
-    .nav-logo {
-      display: flex; align-items: center; gap: 12px;
-    }
-    .nav-logo img { width: 44px; height: auto; }
-    .nav-logo-text {
-      font-family: 'Gochi Hand', cursive;
-      font-size: 26px;
-      color: var(--sky-deep);
-      letter-spacing: 1px;
-    }
-
-    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
-    .nav-links a {
-      font-size: 14px; font-weight: 500;
-      color: var(--text-mid);
-      transition: color 0.3s;
-    }
-    .nav-links a:hover { color: var(--sky-deep); }
-
-    .nav-cta {
-      background: var(--ink);
-      color: var(--paper);
-      font-size: 13px; font-weight: 700;
-      padding: 10px 20px;
-      border-radius: 50px;
-      transition: all 0.3s;
-    }
-    .nav-cta:hover {
-      background: var(--sky-deep);
-      transform: translateY(-1px);
-    }
-
-    .nav-toggle {
-      display: none; background: none; border: none;
-      cursor: pointer; width: 28px; height: 20px; position: relative;
-    }
-    .nav-toggle span {
-      display: block; width: 100%; height: 2px;
-      background: var(--ink); position: absolute; left: 0;
-      transition: all 0.3s; border-radius: 2px;
-    }
-    .nav-toggle span:nth-child(1) { top: 0; }
-    .nav-toggle span:nth-child(2) { top: 9px; }
-    .nav-toggle span:nth-child(3) { top: 18px; }
-
-    /* ── Hero ── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background: var(--paper);
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -100px;
-      width: 380px; height: 380px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(95,168,224,0.16) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -140px; left: 15%;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,197,68,0.14) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 130px 50px 80px 80px;
-      max-width: 680px;
-      position: relative; z-index: 2;
-    }
-
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: 'Playfair Display', serif;
-      font-size: 13px; font-weight: 600;
-      font-style: italic;
-      color: var(--crown-red);
-      letter-spacing: 3px;
-      margin-bottom: 26px;
-      text-transform: uppercase;
-      width: fit-content;
-    }
-    .hero-tag::before {
-      content: '♛';
-      font-size: 18px;
-      color: var(--crown-red);
-    }
-
-    .hero-title {
-      font-family: 'Pretendard Variable', sans-serif;
-      font-size: 54px; line-height: 1.2; font-weight: 800;
-      color: var(--ink);
-      margin-bottom: 22px;
-      letter-spacing: -1.3px;
-    }
-    .hero-title em {
-      font-style: normal;
-      color: var(--sky-deep);
-    }
-    .hero-title .hand {
-      font-family: 'Gochi Hand', cursive;
-      color: var(--crown-red);
-      font-weight: 400;
-      font-size: 58px;
-    }
-
-    .hero-sub {
-      font-size: 17px;
-      color: var(--text-mid);
-      margin-bottom: 18px;
-      line-height: 1.85;
-    }
-    .hero-sub strong { color: var(--ink); font-weight: 700; }
-
-    .hero-values {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-bottom: 36px;
-    }
-    .hero-value {
-      background: var(--soft-gray);
-      color: var(--ink);
-      font-size: 13px; font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 50px;
-      letter-spacing: 0.3px;
-    }
-
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--ink);
-      color: var(--paper);
-      font-size: 15px; font-weight: 700;
-      padding: 16px 34px;
-      border: none; border-radius: 50px;
-      transition: all 0.3s;
-      box-shadow: 0 8px 24px rgba(26,26,26,0.18);
-    }
-    .btn-primary:hover {
-      background: var(--sky-deep);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 32px rgba(58,131,188,0.28);
-    }
-
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: transparent;
-      color: var(--ink);
-      font-size: 15px; font-weight: 700;
-      padding: 15px 32px;
-      border: 1.5px solid var(--ink);
-      border-radius: 50px;
-      transition: all 0.3s;
-    }
-    .btn-outline:hover {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .hero-visual {
-      position: relative;
-      display: flex; align-items: center; justify-content: center;
-      padding: 100px 60px 60px 0;
-      z-index: 1;
-    }
-    .hero-visual-frame {
-      position: relative;
-      width: 100%;
-      max-width: 560px;
-    }
-    .hero-visual-frame img {
-      width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 18px 50px rgba(26,26,26,0.15);
-    }
-    .hero-badge {
-      position: absolute;
-      top: -18px; right: -18px;
-      background: var(--crown-red);
-      color: white;
-      width: 104px; height: 104px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      font-family: 'Gochi Hand', cursive;
-      font-size: 15px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 10px 28px rgba(230,69,69,0.4);
-      transform: rotate(12deg);
-      line-height: 1.25;
-      z-index: 3;
-    }
-    .hero-badge small {
-      font-size: 11px;
-      opacity: 0.9;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      letter-spacing: 2px;
-    }
-
-    /* ── Section base ── */
-    .section-pad { padding: 120px 80px; }
-
-    .section-tag {
-      display: inline-block;
-      font-family: 'Playfair Display', serif;
-      font-size: 13px; font-weight: 600;
-      font-style: italic;
-      color: var(--sky-deep);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .section-title {
-      font-family: 'Pretendard Variable', sans-serif;
-      font-size: 42px; line-height: 1.35;
-      color: var(--ink);
-      margin-bottom: 22px;
-      font-weight: 800;
-      letter-spacing: -0.8px;
-    }
-    .section-title em {
-      font-style: normal;
-      color: var(--sky-deep);
-    }
-    .section-title .hand {
-      font-family: 'Gochi Hand', cursive;
-      color: var(--crown-red);
-      font-weight: 400;
-    }
-
-    .section-desc {
-      font-size: 16px;
-      color: var(--text-mid);
-      max-width: 640px;
-      line-height: 1.9;
-    }
-
-    /* ── Story ── */
-    .story {
-      background: var(--soft-bg);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-    .story-visual {
-      text-align: center;
-      position: relative;
-    }
-    .story-visual img {
-      max-width: 320px;
-      width: 100%;
-      margin: 0 auto;
-      filter: drop-shadow(0 10px 30px rgba(26,26,26,0.08));
-    }
-    .story-visual::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(95,168,224,0.12) 0%, transparent 60%);
-      transform: translate(-50%, -50%);
-      z-index: 0;
-    }
-    .story-visual img { position: relative; z-index: 1; }
-
-    .story-points {
-      list-style: none;
-      margin-top: 28px;
-      display: flex; flex-direction: column; gap: 14px;
-    }
-    .story-points li {
-      display: flex; gap: 14px; align-items: flex-start;
-      font-size: 15.5px;
-      color: var(--text);
-      line-height: 1.75;
-    }
-    .story-points li::before {
-      content: '♛';
-      flex-shrink: 0;
-      color: var(--crown-red);
-      font-size: 18px;
-      margin-top: 2px;
-    }
-
-    /* ── Products ── */
-    .products {
-      background: var(--paper);
-      text-align: center;
-    }
-    .products-head { margin-bottom: 70px; }
-    .products-head .section-desc { margin: 0 auto; }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .product-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.4s;
-      text-align: left;
-    }
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 22px 44px rgba(26,26,26,0.1);
-      border-color: var(--sky);
-    }
-
-    .product-card-img {
-      position: relative;
-      width: 100%;
-      height: 280px;
-      overflow: hidden;
-      background: var(--soft-bg);
-    }
-    .product-card-img img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    .product-card:hover .product-card-img img { transform: scale(1.06); }
-
-    .product-label {
-      position: absolute; top: 14px; left: 14px;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: 'Playfair Display', serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 2px;
-      padding: 6px 12px;
-      border-radius: 30px;
-      text-transform: uppercase;
-      font-style: italic;
-    }
-    .product-label.red { background: var(--crown-red); }
-    .product-label.sun { background: var(--sun); color: var(--ink); }
-
-    .product-card-body { padding: 22px 20px 26px; }
-    .product-card-tag {
-      display: inline-block;
-      font-size: 12px;
-      color: var(--sky-deep);
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-    .product-card h3 {
-      font-family: 'Pretendard Variable', sans-serif;
-      font-size: 19px; font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 10px;
-    }
-    .product-card p {
-      font-size: 13.5px;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    /* ── Values ── */
-    .values {
-      background: var(--ink);
-      color: var(--paper);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .values::before {
-      content: '';
-      position: absolute; top: -120px; right: -100px;
-      width: 360px; height: 360px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(95,168,224,0.2) 0%, transparent 70%);
-    }
-    .values .section-tag { color: var(--sun); }
-    .values .section-title { color: var(--paper); }
-    .values .section-title em { color: var(--sky); }
-    .values .section-desc { color: rgba(255,255,255,0.72); }
-
-    .values-head { margin-bottom: 70px; position: relative; z-index: 2; }
-    .values-head .section-desc { margin: 0 auto; }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-      position: relative; z-index: 2;
-    }
-    .value-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 40px 30px;
-      border-radius: 22px;
-      transition: all 0.3s;
-    }
-    .value-card:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: var(--sky);
-      transform: translateY(-6px);
-    }
-    .value-icon {
-      width: 64px; height: 64px;
-      margin: 0 auto 22px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 30px;
-      background: var(--sky);
-      color: var(--paper);
-    }
-    .value-card:nth-child(2) .value-icon { background: var(--crown-red); }
-    .value-card:nth-child(3) .value-icon { background: var(--sun); color: var(--ink); }
-
-    .value-card h3 {
-      font-family: 'Pretendard Variable', sans-serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--paper);
-      margin-bottom: 12px;
-    }
-    .value-card p {
-      font-size: 14.5px;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.8;
-    }
-
-    /* ── Craft (업사이클링 프로세스) ── */
-    .craft {
-      background: var(--soft-bg);
-    }
-    .craft-head { text-align: center; margin-bottom: 70px; }
-    .craft-head .section-desc { margin: 0 auto; }
-
-    .craft-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .craft-step {
-      text-align: center;
-      background: var(--paper);
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      transition: all 0.3s;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .craft-step:hover {
-      transform: translateY(-4px);
-      border-color: var(--sky);
-      box-shadow: 0 14px 30px rgba(26,26,26,0.08);
-    }
-    .craft-step-img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      background: var(--soft-gray);
-      position: relative;
-    }
-    .craft-step-img img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    .craft-step:hover .craft-step-img img { transform: scale(1.05); }
-    .craft-step-body { padding: 22px 18px 26px; }
-    .craft-num {
-      font-family: 'Gochi Hand', cursive;
-      font-size: 38px;
-      color: var(--crown-red);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .craft-step h4 {
-      font-family: 'Pretendard Variable', sans-serif;
-      font-size: 17px; font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .craft-step p {
-      font-size: 13px;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    /* ── Mission (유기견 봉사) ── */
-    .mission {
-      background: var(--paper);
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-    .mission-visual {
-      position: relative;
-    }
-    .mission-visual img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 18px 44px rgba(26,26,26,0.14);
-    }
-    .mission-visual::after {
-      content: '';
-      position: absolute;
-      bottom: -18px; right: -18px;
-      width: 140px; height: 140px;
-      background: var(--sun);
-      border-radius: 50%;
-      z-index: -1;
-      opacity: 0.85;
-    }
-    .mission-quote {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 14px;
-      color: var(--crown-red);
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-    }
-    .mission-list {
-      list-style: none;
-      margin-top: 24px;
-      display: flex; flex-direction: column; gap: 12px;
-    }
-    .mission-list li {
-      display: flex; gap: 12px;
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.7;
-    }
-    .mission-list li::before {
-      content: '🐾';
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    /* ── Newsletter (DB 수집 폼) ── */
-    .newsletter {
-      background: linear-gradient(135deg, var(--sky) 0%, var(--sky-deep) 100%);
-      color: var(--paper);
-      padding: 120px 80px;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-    .newsletter::before {
-      content: '';
-      position: absolute; top: -100px; left: 10%;
-      width: 360px; height: 360px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,197,68,0.18) 0%, transparent 70%);
-    }
-    .newsletter::after {
-      content: '';
-      position: absolute; bottom: -120px; right: 12%;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(230,69,69,0.2) 0%, transparent 70%);
-    }
-
-    .newsletter-inner { position: relative; z-index: 2; max-width: 880px; margin: 0 auto; }
-
-    .newsletter .section-tag { color: var(--sun); }
-    .newsletter-title {
-      font-family: 'Pretendard Variable', sans-serif;
-      font-size: 46px; font-weight: 800;
-      color: var(--paper);
-      margin-bottom: 20px;
-      line-height: 1.35;
-      letter-spacing: -0.8px;
-    }
-    .newsletter-title .hand {
-      font-family: 'Gochi Hand', cursive;
-      color: var(--sun);
-      font-weight: 400;
-    }
-    .newsletter-desc {
-      font-size: 17px;
-      color: rgba(255,255,255,0.88);
-      max-width: 640px;
-      margin: 0 auto 46px;
-      line-height: 1.9;
-    }
-
-    .newsletter-form-wrap {
-      background: var(--paper);
-      border-radius: 20px;
-      padding: 12px;
-      max-width: 720px;
-      margin: 0 auto;
-      box-shadow: 0 20px 50px rgba(26,26,26,0.2);
-    }
-    .newsletter-form-wrap iframe {
-      width: 100%;
-      border: none;
-      border-radius: 12px;
-      display: block;
-    }
-
-    .newsletter-note {
-      margin-top: 20px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
-      font-style: italic;
-    }
-
-    .newsletter-placeholder {
-      background: rgba(255,255,255,0.12);
-      border: 2px dashed rgba(255,255,255,0.35);
-      border-radius: 16px;
-      padding: 60px 30px;
-      color: var(--paper);
-    }
-    .newsletter-placeholder h4 {
-      font-family: 'Pretendard Variable', sans-serif;
-      font-size: 20px; font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--sun);
-    }
-    .newsletter-placeholder p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.8;
-      max-width: 540px;
-      margin: 0 auto;
-    }
-    .newsletter-placeholder code {
-      background: rgba(0,0,0,0.25);
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 13px;
-      color: var(--sun);
-    }
-
-    /* ── Contact/Footer ── */
-    .contact {
-      background: var(--paper);
-      text-align: center;
-      padding: 100px 80px;
-    }
-    .contact-title {
-      font-family: 'Pretendard Variable', sans-serif;
-      font-size: 36px; font-weight: 800;
-      color: var(--ink);
-      margin-bottom: 14px;
-      letter-spacing: -0.6px;
-    }
-    .contact-desc {
-      font-size: 16px;
-      color: var(--text-mid);
-      margin-bottom: 40px;
-    }
-    .contact-channels {
-      display: flex; justify-content: center; gap: 14px;
-      flex-wrap: wrap;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .contact-channel {
-      --brand: var(--ink);
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--paper);
-      padding: 16px 26px;
-      border-radius: 50px;
-      border: 1.5px solid var(--line);
-      transition: all 0.3s;
-      font-size: 14.5px;
-      font-weight: 600;
-      color: var(--ink);
-    }
-    .contact-channel .brand-icon {
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      display: inline-flex; align-items: center; justify-content: center;
-      background: var(--brand);
-      color: #fff;
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-    .contact-channel .brand-icon svg { width: 14px; height: 14px; fill: currentColor; }
-    .contact-channel:hover {
-      background: var(--brand);
-      color: #fff;
-      border-color: var(--brand);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-    }
-    .contact-channel:hover .brand-icon {
-      background: #fff;
-      color: var(--brand);
-      transform: scale(1.08);
-    }
-
-    /* 브랜드별 고유색 */
-    .contact-channel.smartstore { --brand: #03C75A; }   /* 네이버 그린 */
-    .contact-channel.naver-blog { --brand: #03C75A; }   /* 네이버 블로그 */
-    .contact-channel.gmail      { --brand: #EA4335; }   /* Gmail 레드 */
-
-    footer {
-      background: var(--ink);
-      padding: 40px 80px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 20px;
-    }
-    .footer-brand {
-      display: flex; align-items: center; gap: 12px;
-    }
-    .footer-brand img { width: 38px; filter: invert(1) brightness(1.6); }
-    .footer-brand-text {
-      font-family: 'Gochi Hand', cursive;
-      color: var(--sky);
-      font-size: 22px;
-    }
-    .footer-copy {
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.4);
-    }
-
-    /* ── Animations ── */
-    .fade-up {
-      opacity: 0; transform: translateY(40px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .fade-up-d1 { transition-delay: 0.1s; }
-    .fade-up-d2 { transition-delay: 0.2s; }
-    .fade-up-d3 { transition-delay: 0.3s; }
-
-    /* ── Responsive ── */
-    @media (max-width: 1100px) {
-      .section-pad { padding: 90px 40px; }
-      .hero-content { padding: 120px 40px 60px 50px; }
-      .hero-title { font-size: 44px; }
-      .hero-title .hand { font-size: 48px; }
-      .hero-visual { padding: 100px 30px 40px 0; }
-      .products-grid { grid-template-columns: repeat(2, 1fr); }
-      .craft-steps { grid-template-columns: repeat(2, 1fr); }
-      .values-grid { grid-template-columns: 1fr; gap: 16px; }
-      .story { grid-template-columns: 1fr; gap: 40px; }
-      .mission { grid-template-columns: 1fr; gap: 50px; }
-      .newsletter { padding: 90px 40px; }
-      .contact { padding: 80px 40px; }
-      footer { padding: 36px 40px; }
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 14px 22px; }
-      nav.scrolled { padding: 10px 22px; }
-      .nav-links { display: none; }
-      .nav-toggle { display: block; }
-      .nav-logo-text { font-size: 22px; }
-      .nav-logo img { width: 38px; }
-
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-content { padding: 110px 22px 40px; }
-      .hero-title { font-size: 34px; line-height: 1.3; }
-      .hero-title .hand { font-size: 38px; }
-      .hero-sub { font-size: 15px; }
-      .hero-visual { padding: 0 22px 60px; }
-      .hero-badge { width: 78px; height: 78px; font-size: 12px; }
-      .hero-btns { flex-direction: column; align-items: stretch; }
-      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
-
-      .section-pad { padding: 70px 22px; }
-      .section-title { font-size: 28px; }
-
-      .products-grid { grid-template-columns: 1fr; }
-      .product-card-img { height: 240px; }
-      .craft-steps { grid-template-columns: 1fr; }
-
-      .newsletter { padding: 70px 22px; }
-      .newsletter-title { font-size: 28px; }
-      .contact { padding: 70px 22px; }
-      .contact-channels { flex-direction: column; align-items: stretch; }
-
-      footer { flex-direction: column; text-align: center; padding: 30px 22px; }
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JUNGKYDOG RE:FORM — 세상에 하나뿐인 내 아이의 하네스</title>
+<meta name="description" content="정키독은 옷장 속 잠든 옷과 특별한 원단에 감각적인 리폼을 더해, 반려견의 체형·성격·분위기에 맞춘 하네스를 만듭니다.">
+<meta property="og:title" content="JUNGKYDOG RE:FORM — 세상에 하나뿐인 내 아이의 하네스">
+<meta property="og:description" content="리폼 · 업사이클링 · 시그니처 하네스 · 원데이 클래스">
+<style>
+:root{
+  --ink:#111111; --cream:#F7F3EC; --paper:#FFFEFB; --line:#E7DFD4;
+  --taupe:#9B8974; --brown:#6C5745; --blue:#6F94C5; --red:#B9534E; --muted:#66615C;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Arial,sans-serif;line-height:1.55} a{text-decoration:none;color:inherit}
+.wrap{width:min(1180px,92vw);margin:auto}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,254,251,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.18em}
+.brand img{width:74px;height:74px;object-fit:contain}
+.menu{display:flex;gap:28px;color:#4f4b47;font-size:14px;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:15px 24px;border:1px solid var(--ink);font-weight:900;transition:.2s}
+.btn.dark{background:var(--ink);color:#fff}
+.btn:hover{transform:translateY(-2px)}
+.hero{padding:74px 0 56px;background:radial-gradient(circle at 78% 18%,#f0e9df 0,#fffefb 35%,#fbf7f0 100%)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}
+.eyebrow{font-family:Georgia,serif;letter-spacing:.32em;color:var(--taupe);font-weight:800;font-size:13px;text-transform:uppercase}
+.hero h1{font-size:clamp(45px,6vw,82px);letter-spacing:-.07em;line-height:1.05;margin:18px 0 22px}
+.hero h1 span{color:var(--brown)}
+.lead{font-size:20px;color:#57514c;max-width:650px}
+.micro{font-size:15px;color:#827a73;margin-top:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero-card{position:relative;background:#fff;border-radius:34px;padding:18px;box-shadow:0 36px 100px rgba(17,17,17,.10);overflow:hidden}
+.hero-card img{display:block;width:100%;height:520px;object-fit:cover;border-radius:24px}
+.seal{position:absolute;right:34px;bottom:34px;background:rgba(17,17,17,.92);color:white;border-radius:26px;padding:22px 24px;max-width:230px}
+.seal img{width:54px;height:54px;object-fit:contain;margin-bottom:8px;border-radius:0}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:28px;overflow:hidden;margin-top:46px}
+.chip{background:rgba(255,255,255,.82);padding:28px;text-align:center}
+.chip b{display:block;font-size:18px;margin:8px 0}
+.chip small{color:var(--muted)}
+.section{padding:94px 0}
+.center{text-align:center}
+.section h2{font-size:clamp(34px,4.3vw,60px);letter-spacing:-.06em;line-height:1.13;margin:12px 0 16px}
+.section h2 span{color:var(--blue)}
+.muted{color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.panel{background:var(--cream);border:1px solid var(--line);border-radius:34px;padding:36px}
+.panel img,.photo img{width:100%;display:block;border-radius:24px}
+.photo{border-radius:34px;overflow:hidden;background:#fff;padding:14px;border:1px solid var(--line);box-shadow:0 22px 70px rgba(17,17,17,.07)}
+.list{display:grid;gap:14px;margin-top:26px}
+.list div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px;font-weight:800}
+.dark{background:#151515;color:#fff}
+.dark .muted{color:#beb8b0}
+.dark .eyebrow{color:#d4c2a7}
+.dark .list div{background:#222;border-color:#333}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 18px 55px rgba(17,17,17,.04)}
+.card .num{font-family:Georgia,serif;color:var(--red);font-size:38px;font-weight:900}
+.card h3{font-size:24px;margin:12px 0 8px}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+.product{background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden}
+.product img{width:100%;height:225px;object-fit:cover}
+.product div{padding:20px}
+.product b{font-size:20px}
+.quote{font-size:clamp(26px,3.6vw,48px);font-weight:900;line-height:1.22;letter-spacing:-.06em;margin-top:28px;color:var(--brown)}
+.cta{background:linear-gradient(135deg,#111,#3b332b);color:#fff;border-radius:42px;padding:70px;text-align:center}
+.footer{background:#111;color:#aaa;padding:42px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer img{width:76px;object-fit:contain}
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.process-grid img{width:100%;height:210px;object-fit:cover;border-radius:18px;display:block}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}
+.gallery-grid img{width:100%;height:280px;object-fit:cover;border-radius:22px;display:block;transition:.25s}
+.gallery-grid img:hover{transform:scale(1.02)}
+@media(max-width:920px){.hero-grid,.split{grid-template-columns:1fr}.menu{display:none}.chips,.cards,.product-grid,.gallery-grid{grid-template-columns:1fr 1fr}.hero-card img{height:420px}.footer-inner{display:block;text-align:center}.cta{padding:46px 24px}}
+@media(max-width:560px){.chips,.cards,.product-grid,.gallery-grid{grid-template-columns:1fr}.brand span{font-size:12px}.brand img{width:60px;height:60px}.hero-card img{height:330px}.hero h1{font-size:42px}.process-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#"><img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG RE:FORM symbol"><span>JUNGKYDOG</span></a>
+    <nav class="menu">
+      <a href="#reform">리폼</a>
+      <a href="#signature">시그니처 하네스</a>
+      <a href="#upcycling">업사이클링</a>
+      <a href="#class">원데이 클래스</a>
+      <a href="#story">브랜드 스토리</a>
+    </nav>
+    <a class="btn dark" href="#contact">의뢰 상담</a>
+  </div>
+</header>
+<main>
 
-  <!-- Nav -->
-  <nav id="nav">
-    <a href="#" class="nav-logo">
-      <img src="images/logo.png" alt="정키독">
-      <span class="nav-logo-text">정키독</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#story">브랜드</a></li>
-      <li><a href="#products">제품</a></li>
-      <li><a href="#values">가치</a></li>
-      <li><a href="#craft">업사이클링</a></li>
-      <li><a href="#mission">미션</a></li>
-      <li><a href="#newsletter" class="nav-cta">소식 받기 →</a></li>
-    </ul>
-    <button class="nav-toggle" onclick="toggleMenu()" aria-label="메뉴">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <span class="hero-tag">Premium Dog Harness · Upcycling</span>
-      <h1 class="hero-title">
-        프리미엄 반려견 용품<br>
-        그리고 <span class="hand">업사이클링</span>
-      </h1>
-      <p class="hero-sub">
-        사회적 가치와 <strong>내 아이의 안전</strong>을 동시에 챙기는 브랜드.<br>
-        청담펫부티크 · 정키독이 제안하는 특별한 하네스를 만나보세요.
-      </p>
-      <div class="hero-values">
-        <span class="hero-value">✓ 안전</span>
-        <span class="hero-value">✓ 편안함</span>
-        <span class="hero-value">✓ 유니크한 디자인</span>
-      </div>
-      <div class="hero-btns">
-        <a href="#newsletter" class="btn-primary">신제품 소식 받기 →</a>
-        <a href="#products" class="btn-outline">제품 둘러보기</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">JUNGKYDOG RE:FORM ATELIER</div>
+      <h1>세상에 하나뿐인<br><span>내 아이의 하네스</span></h1>
+      <p class="lead">정키독은 옷장 속 잠든 옷과 특별한 원단에 감각적인 리폼을 더해, 반려견의 체형·성격·분위기에 맞춘 하네스를 만듭니다.</p>
+      <p class="micro">리폼 · 업사이클링 · 시그니처 하네스 · 원데이 클래스</p>
+      <div class="actions">
+        <a class="btn dark" href="#reform">리폼 의뢰하기</a>
+        <a class="btn" href="#signature">하네스 보기</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-visual-frame">
-        <div class="hero-badge">
-          <small>Since</small>
-          청담<br>
-          부티크
-        </div>
-        <img src="images/products/rocket.jpg" alt="우주선 하네스 · 정키독 대표 제품">
+    <div class="hero-card">
+      <img src="정키독의 모델.jpg" alt="정키독 하네스를 입은 강아지">
+      <div class="seal">
+        <img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG symbol">
+        <b>JUNGKYDOG RE:FORM</b><br>입는 순간, 우리 아이답게.
       </div>
     </div>
-  </section>
+  </div>
+  <div class="wrap chips">
+    <div class="chip"><b>리폼 아틀리에</b><small>잠든 옷과 원단에 새 생명을</small></div>
+    <div class="chip"><b>감각적 디자인</b><small>수선이 아닌 분위기 리디자인</small></div>
+    <div class="chip"><b>맞춤 설계</b><small>체형과 산책 습관을 고려</small></div>
+    <div class="chip"><b>따뜻한 가치</b><small>보호와 지속가능성을 함께</small></div>
+  </div>
+</section>
 
-  <!-- Story -->
-  <section class="story section-pad" id="story">
-    <div class="story-visual fade-up">
-      <img src="images/logo.png" alt="정키독 로고">
+<!-- REFORM -->
+<section id="reform" class="section">
+  <div class="wrap split">
+    <div class="process-grid">
+      <img src="리폼 아틀리에(정교한 수작업 리폼).jpg" alt="정교한 수작업 리폼">
+      <img src="리폼 아틀리에(새 생명을 얻은 하나뿐인 하네스).jpg" alt="새 생명을 얻은 하네스">
+      <img src="리폼 아틀리에(오래된 옷과 원단의 재발견).jpg" alt="오래된 원단의 재발견">
+      <img src="맞춤설계(정확한 사이즈 1_1 측정).jpg" alt="1:1 사이즈 측정">
     </div>
-    <div class="fade-up fade-up-d1">
-      <span class="section-tag">Our Story</span>
-      <h2 class="section-title">손으로 짓는 <em>정키독</em>의<br><span class="hand">작은 왕관</span></h2>
-      <p class="section-desc">
-        정키독은 내 아이가 매일 두르는 하네스를
-        명품 편집숍의 한 벌처럼 귀하게 만듭니다.
-        <strong>은퇴한 소방관의 폐방화복</strong>을 다시 살리는 업사이클링,
-        그리고 한 땀 한 땀 올린 손자수 포인트로 세상에 하나뿐인 유니크함을 더합니다.
-      </p>
-      <ul class="story-points">
-        <li>청담의 감각, 펫부티크의 정성</li>
-        <li>폐방화복을 다시 살리는 업사이클링 철학</li>
-        <li>한 땀 한 땀 손으로 올린 자수 포인트</li>
-        <li>내 반려견만의 왕관 같은 특별함</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section class="products section-pad" id="products">
-    <div class="products-head">
-      <span class="section-tag">Signature Harness</span>
-      <h2 class="section-title">네 가지 <em>시그니처</em> 하네스</h2>
-      <p class="section-desc">
-        체크 원단의 클래식함 위에 한 땀 한 땀 올린 자수 포인트.
-        반려견의 개성을 표현하는 네 가지 테마.
-      </p>
-    </div>
-    <div class="products-grid">
-      <div class="product-card fade-up">
-        <div class="product-card-img">
-          <span class="product-label">Signature</span>
-          <img src="images/products/rocket.jpg" alt="우주선 하네스">
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-tag">Rocket</span>
-          <h3>우주선 하네스</h3>
-          <p>우주로 떠나는 꿈을 담은 로켓 자수 포인트. 블루 체크 원단과 옐로우 자수의 완벽한 조화.</p>
-        </div>
-      </div>
-      <div class="product-card fade-up fade-up-d1">
-        <div class="product-card-img">
-          <span class="product-label red">Hero</span>
-          <img src="images/products/superman.jpg" alt="슈퍼맨 하네스">
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-tag">Superman</span>
-          <h3>슈퍼맨 하네스</h3>
-          <p>우리집 작은 영웅을 위한 슈퍼맨 패치. 특별한 순간에 어울리는 시그니처 디자인.</p>
-        </div>
-      </div>
-      <div class="product-card fade-up fade-up-d2">
-        <div class="product-card-img">
-          <span class="product-label sun">Cute</span>
-          <img src="images/products/minions.jpg" alt="미니언즈 하네스">
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-tag">Minions</span>
-          <h3>미니언즈 하네스</h3>
-          <p>사랑스러운 노란 친구를 하네스에. 산책길의 모든 시선을 사로잡는 귀여움 한 스푼.</p>
-        </div>
-      </div>
-      <div class="product-card fade-up fade-up-d3">
-        <div class="product-card-img">
-          <span class="product-label">Set</span>
-          <img src="images/products/set.jpg" alt="3종 세트 하네스">
-        </div>
-        <div class="product-card-body">
-          <span class="product-card-tag">Best Set</span>
-          <h3>정키독 3종 세트</h3>
-          <p>대표 시그니처 3종을 한 번에. 선물용으로도, 내 반려견의 기분 전환용으로도 좋은 스페셜 세트.</p>
-        </div>
+    <div>
+      <div class="eyebrow">MAIN SERVICE</div>
+      <h2>정키독의 중심은<br><span>리폼과 업사이클링</span></h2>
+      <p class="muted">아기옷이라는 단어보다 중요한 건 '기억이 담긴 소재를 우리 아이에게 어울리는 형태로 다시 태어나게 하는 것'입니다. 정키독은 단순 수선이 아니라 소재 선택, 컬러 균형, 패치와 자수, 착용감까지 설계합니다.</p>
+      <div class="list">
+        <div>의뢰 상담: 아이 체형·성격·사용 목적 확인</div>
+        <div>디자인 제안: 원단, 배색, 포인트, 이름 자수 구성</div>
+        <div>제작: 안전한 구조와 편안한 착용감 중심 제작</div>
+        <div>완성: 착용 사진, 관리법, 다음 리폼 제안까지 연결</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Values -->
-  <section class="values section-pad" id="values">
-    <div class="values-head">
-      <span class="section-tag">Our Values</span>
-      <h2 class="section-title">우리가 지키는 <em>세 가지</em></h2>
-      <p class="section-desc">
-        귀여운 디자인 뒤에 숨은 타협 없는 원칙.
-        내 아이가 매일 두르는 것이기에 더 철저하게.
-      </p>
+<!-- WHY JUNGKYDOG -->
+<section class="section dark">
+  <div class="wrap center">
+    <div class="eyebrow">WHY JUNGKYDOG</div>
+    <h2>정키독이 이기는 기술은<br>손끝의 감각입니다</h2>
+    <p class="muted">큰 브랜드가 따라오기 어려운 영역은 속도가 아니라, 한 마리 한 마리에게 맞추는 섬세함입니다.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="num">01</div>
+        <h3>리폼 기술</h3>
+        <p class="muted">옷의 구조를 해체하고 하네스 구조로 다시 설계합니다.</p>
+      </article>
+      <article class="card">
+        <div class="num">02</div>
+        <h3>디자인 감각</h3>
+        <p class="muted">원단 조합, 색감, 포인트 하나로 제품의 분위기를 만듭니다.</p>
+      </article>
+      <article class="card">
+        <div class="num">03</div>
+        <h3>의뢰 경험</h3>
+        <p class="muted">상담부터 완성까지 고객이 브랜드를 함께 만드는 경험을 줍니다.</p>
+      </article>
     </div>
-    <div class="values-grid">
-      <div class="value-card fade-up">
-        <div class="value-icon">🛡</div>
-        <h3>안전</h3>
-        <p>반려견의 몸에 부담 없는 구조 설계와 견고한 마감. 산책 내내 믿고 맡길 수 있는 안정성.</p>
-      </div>
-      <div class="value-card fade-up fade-up-d1">
-        <div class="value-icon">☁</div>
-        <h3>편안함</h3>
-        <p>부드럽고 숨 쉬는 원단, 피부에 자극 없는 마감. 오래 두르고 있어도 편안한 착용감.</p>
-      </div>
-      <div class="value-card fade-up fade-up-d2">
-        <div class="value-icon">✧</div>
-        <h3>유니크한 디자인</h3>
-        <p>한 땀 한 땀 올린 손자수 패치, 체크 원단의 클래식한 매력. 세상 어디에도 없는 유일함.</p>
-      </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO GALLERY -->
+<section class="section">
+  <div class="wrap center">
+    <div class="eyebrow">PORTFOLIO</div>
+    <h2>정키독의 작업들</h2>
+    <p class="muted">설계, 드로잉, 원단 선택, 제작 — 모든 단계가 정키독만의 방식입니다.</p>
+    <div class="gallery-grid">
+      <img src="감각적 디자인(감성적인 디자인 드로잉).jpg" alt="감성적인 디자인 드로잉">
+      <img src="감각적 디자인(무드보드 영감의 시작).jpg" alt="무드보드 영감의 시작">
+      <img src="감각적 디자인(디자인 드로잉에 맞는 소재와 컬러의 감각적 조화).jpg" alt="소재와 컬러의 감각적 조화">
+      <img src="맞춤 설계(편안함과 안정감을 교감).jpg" alt="편안함과 안정감을 교감">
+      <img src="맞춤 설계(리폼한 하네스를 입고 산책).jpg" alt="리폼 하네스를 입고 산책">
+      <img src="리폼 아틀리에(정교한 수작업)-1.jpg" alt="정교한 수작업">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Craft / Upcycling -->
-  <section class="craft section-pad" id="craft">
-    <div class="craft-head">
-      <span class="section-tag">Upcycling Craft</span>
-      <h2 class="section-title"><em>폐방화복</em>이 왕관이 되는 <span class="hand">네 단계</span></h2>
-      <p class="section-desc">
-        은퇴한 소방관이 입던 방화복 한 조각이
-        내 아이의 가장 특별한 하네스로 태어나기까지.
-      </p>
+<!-- SIGNATURE HARNESS -->
+<section id="signature" class="section">
+  <div class="wrap center">
+    <div class="eyebrow">SIGNATURE HARNESS</div>
+    <h2>정키독 시그니처 하네스</h2>
+    <p class="muted">완제품 판매는 입문 상품, 리폼 의뢰는 핵심 매출. 스마트스토어와 홈페이지가 자연스럽게 이어지는 구조입니다.</p>
+    <div class="product-grid">
+      <article class="product">
+        <img src="미니언즈 하네스.jpg" alt="미니언즈 하네스">
+        <div><b>Classic Reform</b><p class="muted">가장 정키독다운 기본 라인</p></div>
+      </article>
+      <article class="product">
+        <img src="슈퍼맨 하네스.jpg" alt="슈퍼맨 하네스">
+        <div><b>Patch Point</b><p class="muted">자수·패치로 완성하는 포인트</p></div>
+      </article>
+      <article class="product">
+        <img src="우주선 하네스.jpg" alt="우주선 하네스">
+        <div><b>Upcycle Limited</b><p class="muted">소재가 한정된 리미티드 제작</p></div>
+      </article>
+      <article class="product">
+        <img src="정키독3종세트하네스.jpg" alt="정키독 3종 세트 하네스">
+        <div><b>Walk Set</b><p class="muted">하네스와 리드줄 세트 제안</p></div>
+      </article>
     </div>
-    <div class="craft-steps">
-      <div class="craft-step fade-up">
-        <div class="craft-step-img">
-          <img src="images/craft/design.jpg" alt="폐방화복 디자인 스케치">
-        </div>
-        <div class="craft-step-body">
-          <div class="craft-num">01</div>
-          <h4>디자인 · 설계</h4>
-          <p>방화복의 견고함을 살린<br>하네스 패턴 디자인</p>
-        </div>
-      </div>
-      <div class="craft-step fade-up fade-up-d1">
-        <div class="craft-step-img">
-          <img src="images/craft/workshop.jpg" alt="폐방화복 업사이클링 공방">
-        </div>
-        <div class="craft-step-body">
-          <div class="craft-num">02</div>
-          <h4>공방 작업</h4>
-          <p>은퇴한 방화복을<br>안전 기준에 맞춰 재단</p>
-        </div>
-      </div>
-      <div class="craft-step fade-up fade-up-d2">
-        <div class="craft-step-img">
-          <img src="images/craft/sewing.jpg" alt="폐방화복 봉제 작업">
-        </div>
-        <div class="craft-step-body">
-          <div class="craft-num">03</div>
-          <h4>한 땀 한 땀</h4>
-          <p>테마별 손자수 포인트를<br>한 땀씩 올려 완성</p>
-        </div>
-      </div>
-      <div class="craft-step fade-up fade-up-d3">
-        <div class="craft-step-img">
-          <img src="images/craft/result.jpg" alt="폐방화복으로 완성된 하네스">
-        </div>
-        <div class="craft-step-body">
-          <div class="craft-num">04</div>
-          <h4>완성 · 검수</h4>
-          <p>안전 · 편안함 확인 후<br>내 아이에게로</p>
-        </div>
-      </div>
+  </div>
+</section>
+
+<!-- UPCYCLING -->
+<section id="upcycling" class="section">
+  <div class="wrap split">
+    <div class="photo">
+      <img src="따뜻한 가치(버려질 뻔한 방화복의 재탄생).jpg" alt="방화복의 재탄생">
     </div>
-  </section>
-
-  <!-- Mission (유기견 봉사) -->
-  <section class="mission section-pad" id="mission">
-    <div class="mission-visual fade-up">
-      <img src="images/craft/rescue.jpg" alt="유기견 봉사 활동">
+    <div>
+      <div class="eyebrow">UPCYCLE PREMIUM</div>
+      <h2>버려진 것이 아니라<br><span>다시 태어나는 가치</span></h2>
+      <p class="muted">업사이클링은 저렴한 대체재가 아니라 이야기가 있는 소재를 더 가치 있게 바꾸는 작업입니다. 정키독은 방화복, 셔츠, 데님, 트위드, 체크 원단을 반려견의 일상에 어울리는 하네스로 제안합니다.</p>
+      <div class="quote">"흔한 제품보다<br>우리 아이에게 어울리는 것."</div>
     </div>
-    <div class="fade-up fade-up-d1">
-      <span class="section-tag">Our Mission</span>
-      <p class="mission-quote">For every paw that needs us</p>
-      <h2 class="section-title">하네스가 닿지 못한 곳에<br><em>마음</em>을 더합니다</h2>
-      <p class="section-desc">
-        정키독은 매장 너머에서도 멈추지 않습니다.
-        보호소의 아이들에게 직접 만든 하네스를 전하고,
-        유기견 봉사 활동에 꾸준히 함께합니다.
-      </p>
-      <ul class="mission-list">
-        <li>유기견 보호소 정기 봉사 · 산책 동행</li>
-        <li>판매 수익 일부를 동물복지 단체에 기부</li>
-        <li>방화복을 입던 이의 마음을 닮은, 따뜻한 보호의 브랜드</li>
-      </ul>
+  </div>
+</section>
+
+<!-- CLASS -->
+<section id="class" class="section dark">
+  <div class="wrap center">
+    <div class="eyebrow">ONE DAY CLASS</div>
+    <h2>원데이 클래스는<br>정키독의 팬을 만드는 공간</h2>
+    <p class="muted">작은 패치 만들기, 리드줄 꾸미기, 미니 리폼 체험을 통해 고객이 브랜드에 오래 머무르게 만듭니다.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="num">01</div>
+        <h3>패치 클래스</h3>
+        <p class="muted">우리 아이 이름·상징을 담은 포인트 제작</p>
+      </article>
+      <article class="card">
+        <div class="num">02</div>
+        <h3>리폼 상담회</h3>
+        <p class="muted">가져온 옷을 제품화할 수 있는지 상담</p>
+      </article>
+      <article class="card">
+        <div class="num">03</div>
+        <h3>브랜드 데이</h3>
+        <p class="muted">촬영, 후기, 재방문 혜택으로 연결</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Newsletter (DB 수집 핵심 섹션) -->
-  <section class="newsletter" id="newsletter">
-    <div class="newsletter-inner">
-      <span class="section-tag">Stay Connected</span>
-      <h2 class="newsletter-title">
-        정키독의 <span class="hand">새 소식</span>을<br>
-        가장 먼저 받아보세요
-      </h2>
-      <p class="newsletter-desc">
-        신제품 출시, 한정판 패치, 세일 정보까지 —
-        정키독 뉴스레터 구독자에게만 드리는 특별한 혜택을 놓치지 마세요.
-      </p>
-
-      <!--
-        ⬇︎ Google Forms 임베드 자리
-        1. Google Forms에서 "이메일 · 반려견 이름 · 관심 제품" 등 받는 폼 생성
-        2. 보내기 → 임베드 HTML 아이콘(<>) 클릭
-        3. iframe의 src 속성값을 아래 IFRAME_SRC에 붙여넣기
-        4. 높이(height)는 폼 길이에 맞춰 조정
-
-        현재는 placeholder 상태 — 대표님이 Google Forms 만드신 후 src 교체하시면 됩니다.
-      -->
-      <div class="newsletter-form-wrap">
-        <iframe
-          id="gform"
-          src="about:blank"
-          height="820"
-          title="정키독 뉴스레터 구독 폼"
-          loading="lazy">
-          불러오는 중…
-        </iframe>
-        <div class="newsletter-placeholder" id="gform-placeholder">
-          <h4>📝 Google Forms 임베드 준비 완료</h4>
-          <p>
-            대표님께서 Google Forms에서 뉴스레터 구독 폼을 생성하신 후,<br>
-            <code>index.html</code>의 <code>iframe src</code>에 URL을 교체해주세요.<br><br>
-            예시: <code>https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true</code>
-          </p>
-        </div>
-      </div>
-
-      <p class="newsletter-note">
-        * 구독자에게만 제공되는 신제품 정보와 혜택을 보내드립니다. 언제든지 구독 취소 가능합니다.
-      </p>
+<!-- BRAND STORY -->
+<section id="story" class="section">
+  <div class="wrap split">
+    <div class="panel">
+      <img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG RE:FORM symbol">
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <span class="section-tag">Contact</span>
-    <h2 class="contact-title">더 궁금하신 것이 있으신가요?</h2>
-    <p class="contact-desc">스마트스토어·블로그에서 더 많은 정키독 이야기를 만나보세요.</p>
-    <div class="contact-channels">
-      <a href="https://smartstore.naver.com/jungkydog" target="_blank" rel="noopener" class="contact-channel smartstore">
-        <span class="brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.156L16.624 24H24V0h-7.727v12.845z"/></svg>
-        </span>
-        스마트스토어
-      </a>
-      <a href="https://blog.naver.com/jungkydog" target="_blank" rel="noopener" class="contact-channel naver-blog">
-        <span class="brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M20.4 3H3.6C2.7 3 2 3.7 2 4.6v14.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V4.6C22 3.7 21.3 3 20.4 3zm-4 11.4L13 10.3v4.1h-2v-6h2l3.4 4.1V8.4h2v6h-2z"/></svg>
-        </span>
-        네이버 블로그
-      </a>
-      <a href="mailto:swelljung@gmail.com" class="contact-channel gmail">
-        <span class="brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-        </span>
-        이메일 문의
-      </a>
+    <div>
+      <div class="eyebrow">BRAND STORY</div>
+      <h2>정키독은 작은 손길에서<br><span>브랜드가 됩니다</span></h2>
+      <p class="muted">정키독의 심볼은 슈나이저와 러시안블루가 서로 기대어 있는 모습입니다. 보호, 조화, 신뢰, 따뜻함을 담아 리폼과 업사이클링의 가치를 시각적으로 보여줍니다.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-brand">
-      <img src="images/logo.png" alt="정키독">
-      <div>
-        <div class="footer-brand-text">정키독 · Jungkydog</div>
-        <div class="footer-copy">© 2026 청담펫부티크 · 정키독. All rights reserved.</div>
-      </div>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="wrap cta">
+    <div class="eyebrow">CONTACT</div>
+    <h2>우리 아이에게 어울리는 하네스를 의뢰하세요</h2>
+    <p>리폼 상담, 업사이클링 제작, 원데이 클래스 예약을 한 곳에서 시작하세요.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn dark" href="mailto:swelljung@gmail.com">이메일 문의</a>
+      <a class="btn" style="color:#fff;border-color:#fff" href="#signature">제품 보기</a>
     </div>
-    <div class="footer-copy" style="text-align:right;">
-      프리미엄 반려견 용품 &amp; 업사이클링<br>
-      &nbsp;
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="brand">
+      <img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG RE:FORM">
+      <span>JUNGKYDOG</span>
     </div>
-  </footer>
-
-  <script>
-    // Scroll nav
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    });
-
-    // Mobile menu toggle
-    function toggleMenu() {
-      const links = document.querySelector('.nav-links');
-      if (!links) return;
-      if (links.style.display === 'flex') {
-        links.style.display = 'none';
-      } else {
-        links.style.display = 'flex';
-        links.style.flexDirection = 'column';
-        links.style.position = 'absolute';
-        links.style.top = '100%';
-        links.style.right = '22px';
-        links.style.background = '#FFFFFF';
-        links.style.padding = '18px 24px';
-        links.style.borderRadius = '14px';
-        links.style.boxShadow = '0 10px 30px rgba(26,26,26,0.12)';
-        links.style.gap = '14px';
-      }
-    }
-
-    // Fade-up observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.14 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Google Forms placeholder 처리
-    // iframe의 src가 about:blank이면 placeholder 표시, 실제 URL 들어가면 숨김
-    (function() {
-      const iframe = document.getElementById('gform');
-      const placeholder = document.getElementById('gform-placeholder');
-      if (iframe && iframe.src && iframe.src !== 'about:blank' && iframe.src !== window.location.href) {
-        iframe.style.display = 'block';
-        if (placeholder) placeholder.style.display = 'none';
-      } else {
-        iframe.style.display = 'none';
-      }
-    })();
-  </script>
+    <div>프리미엄 반려견 하네스 · 리폼 · 업사이클링 · 원데이 클래스</div>
+  </div>
+</footer>
 </body>
 </html>
