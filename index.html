@@ -3,96 +3,107 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>JUNGKYDOG RE:FORM — 세상에 하나뿐인 내 아이의 하네스</title>
-<meta name="description" content="정키독은 옷장 속 잠든 옷과 특별한 원단에 감각적인 리폼을 더해, 반려견의 체형·성격·분위기에 맞춘 하네스를 만듭니다.">
-<meta property="og:title" content="JUNGKYDOG RE:FORM — 세상에 하나뿐인 내 아이의 하네스">
-<meta property="og:description" content="리폼 · 업사이클링 · 시그니처 하네스 · 원데이 클래스">
+<title>JUNGKYDOG RE:FORM · 정키독</title>
 <style>
 :root{
-  --ink:#111111; --cream:#F7F3EC; --paper:#FFFEFB; --line:#E7DFD4;
+  --ink:#111111; --navy:#20355c; --navy-2:#2c4a7d;
+  --cream:#F7F3EC; --paper:#FFFEFB; --line:#E7DFD4;
   --taupe:#9B8974; --brown:#6C5745; --blue:#6F94C5; --red:#B9534E; --muted:#66615C;
 }
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Arial,sans-serif;line-height:1.55} a{text-decoration:none;color:inherit}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Arial,sans-serif;line-height:1.55}
+a{text-decoration:none;color:inherit}
 .wrap{width:min(1180px,92vw);margin:auto}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,254,251,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.18em}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.18em;color:var(--navy)}
 .brand img{width:74px;height:74px;object-fit:contain}
-.menu{display:flex;gap:28px;color:#4f4b47;font-size:14px;font-weight:700}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:15px 24px;border:1px solid var(--ink);font-weight:900;transition:.2s}
-.btn.dark{background:var(--ink);color:#fff}
+.menu{display:flex;gap:26px;color:var(--navy);font-size:14px;font-weight:800}
+.menu a:hover{color:var(--navy-2)}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:15px 24px;border:1px solid var(--navy);color:var(--navy);font-weight:900;transition:.2s}
+.btn.dark{background:var(--navy);color:#fff}
 .btn:hover{transform:translateY(-2px)}
+.btn.sm{padding:11px 18px;font-size:13px}
 .hero{padding:74px 0 56px;background:radial-gradient(circle at 78% 18%,#f0e9df 0,#fffefb 35%,#fbf7f0 100%)}
 .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}
 .eyebrow{font-family:Georgia,serif;letter-spacing:.32em;color:var(--taupe);font-weight:800;font-size:13px;text-transform:uppercase}
-.hero h1{font-size:clamp(45px,6vw,82px);letter-spacing:-.07em;line-height:1.05;margin:18px 0 22px}
-.hero h1 span{color:var(--brown)}
+.hero h1{font-size:clamp(45px,6vw,82px);letter-spacing:-.07em;line-height:1.05;margin:18px 0 22px;font-weight:900}
+.hero h1 span{color:var(--navy)}
 .lead{font-size:20px;color:#57514c;max-width:650px}
 .micro{font-size:15px;color:#827a73;margin-top:16px}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 .hero-card{position:relative;background:#fff;border-radius:34px;padding:18px;box-shadow:0 36px 100px rgba(17,17,17,.10);overflow:hidden}
 .hero-card img{display:block;width:100%;height:520px;object-fit:cover;border-radius:24px}
-.seal{position:absolute;right:34px;bottom:34px;background:rgba(17,17,17,.92);color:white;border-radius:26px;padding:22px 24px;max-width:230px}
+.seal{position:absolute;right:34px;bottom:34px;background:rgba(32,53,92,.94);color:white;border-radius:26px;padding:22px 24px;max-width:230px}
 .seal img{width:54px;height:54px;object-fit:contain;margin-bottom:8px;border-radius:0}
 .chips{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:28px;overflow:hidden;margin-top:46px}
 .chip{background:rgba(255,255,255,.82);padding:28px;text-align:center}
+.chip .cnum{font-family:Georgia,serif;color:var(--navy);font-size:26px;font-weight:900}
 .chip b{display:block;font-size:18px;margin:8px 0}
 .chip small{color:var(--muted)}
 .section{padding:94px 0}
 .center{text-align:center}
-.section h2{font-size:clamp(34px,4.3vw,60px);letter-spacing:-.06em;line-height:1.13;margin:12px 0 16px}
-.section h2 span{color:var(--blue)}
+.section h2{font-size:clamp(36px,4.6vw,64px);letter-spacing:-.06em;line-height:1.12;margin:12px 0 16px;font-weight:900}
+.section h2 span{color:var(--navy)}
 .muted{color:var(--muted)}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.media-lg{grid-template-columns:1.18fr .82fr}
+.split.media-lg.right{grid-template-columns:.82fr 1.18fr}
 .panel{background:var(--cream);border:1px solid var(--line);border-radius:34px;padding:36px}
 .panel img,.photo img{width:100%;display:block;border-radius:24px}
 .photo{border-radius:34px;overflow:hidden;background:#fff;padding:14px;border:1px solid var(--line);box-shadow:0 22px 70px rgba(17,17,17,.07)}
+.photo.big img{min-height:480px;object-fit:cover}
 .list{display:grid;gap:14px;margin-top:26px}
-.list div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px;font-weight:800}
+.list div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px;font-weight:800;display:flex;gap:14px;align-items:flex-start}
+.list .n{flex:0 0 auto;font-family:Georgia,serif;color:var(--navy);font-weight:900}
 .dark{background:#151515;color:#fff}
-.dark .muted{color:#beb8b0}
-.dark .eyebrow{color:#d4c2a7}
-.dark .list div{background:#222;border-color:#333}
+.dark .muted{color:#beb8b0}.dark .eyebrow{color:#d4c2a7}.dark .list div{background:#222;border-color:#333}
+.dark .section h2 span,.dark h2 span{color:#8fb0e0}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
-.card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 18px 55px rgba(17,17,17,.04)}
-.card .num{font-family:Georgia,serif;color:var(--red);font-size:38px;font-weight:900}
+.card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 18px 55px rgba(17,17,17,.04);text-align:left}
+.card .num{font-family:Georgia,serif;color:var(--navy);font-size:38px;font-weight:900}
 .card h3{font-size:24px;margin:12px 0 8px}
+.card .cimg{width:100%;height:180px;object-fit:cover;border-radius:18px;margin-bottom:16px}
 .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
 .product{background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden}
-.product img{width:100%;height:225px;object-fit:cover}
-.product div{padding:20px}
-.product b{font-size:20px}
-.quote{font-size:clamp(26px,3.6vw,48px);font-weight:900;line-height:1.22;letter-spacing:-.06em;margin-top:28px;color:var(--brown)}
-.cta{background:linear-gradient(135deg,#111,#3b332b);color:#fff;border-radius:42px;padding:70px;text-align:center}
-.footer{background:#111;color:#aaa;padding:42px 0}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.product img{width:100%;height:260px;object-fit:cover}
+.product div{padding:18px 20px;text-align:center}
+.product b{font-size:18px;color:var(--navy)}
+.quote{font-size:clamp(30px,4vw,54px);font-weight:900;line-height:1.22;letter-spacing:-.06em;color:var(--navy)}
+.cta{background:linear-gradient(135deg,#20355c,#3b332b);color:#fff;border-radius:42px;padding:70px;text-align:center}
+.cta .btn{border-color:#fff;color:#fff}
+.cta .btn.dark{background:#fff;color:var(--navy)}
+.footer{background:#141414;color:#aaa;padding:46px 0}
+.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .footer img{width:76px;object-fit:contain}
-.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.process-grid img{width:100%;height:210px;object-fit:cover;border-radius:18px;display:block}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}
-.gallery-grid img{width:100%;height:280px;object-fit:cover;border-radius:22px;display:block;transition:.25s}
-.gallery-grid img:hover{transform:scale(1.02)}
-@media(max-width:920px){.hero-grid,.split{grid-template-columns:1fr}.menu{display:none}.chips,.cards,.product-grid,.gallery-grid{grid-template-columns:1fr 1fr}.hero-card img{height:420px}.footer-inner{display:block;text-align:center}.cta{padding:46px 24px}}
-@media(max-width:560px){.chips,.cards,.product-grid,.gallery-grid{grid-template-columns:1fr}.brand span{font-size:12px}.brand img{width:60px;height:60px}.hero-card img{height:330px}.hero h1{font-size:42px}.process-grid{grid-template-columns:1fr}}
+.footer .brand{color:#fff}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-weight:800}
+.footer-links a{color:#e7e2da}
+.footer-links a:hover{color:#fff}
+@media(max-width:920px){.hero-grid,.split,.split.media-lg,.split.media-lg.right{grid-template-columns:1fr}.menu{display:none}.chips,.cards,.product-grid{grid-template-columns:1fr 1fr}.hero-card img{height:420px}.footer-inner{display:block}.cta{padding:46px 24px}}
+@media(max-width:560px){.chips,.cards,.product-grid{grid-template-columns:1fr}.brand span{font-size:12px}.brand img{width:60px;height:60px}.hero-card img{height:330px}.hero h1{font-size:42px}}
 </style>
 </head>
 <body>
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#"><img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG RE:FORM symbol"><span>JUNGKYDOG</span></a>
+    <a class="brand" href="#"><img src="정키독 심볼마크-2.jpg" alt="JUNGKYDOG RE:FORM 심볼"><span>JUNGKYDOG</span></a>
     <nav class="menu">
       <a href="#reform">리폼</a>
+      <a href="#custom">맞춤 설계</a>
       <a href="#signature">시그니처 하네스</a>
       <a href="#upcycling">업사이클링</a>
       <a href="#class">원데이 클래스</a>
-      <a href="#story">브랜드 스토리</a>
+      <a href="#contact">문의</a>
     </nav>
-    <a class="btn dark" href="#contact">의뢰 상담</a>
+    <div class="nav-cta">
+      <!-- TODO: 카카오 채널 실제 주소로 교체 -->
+      <a class="btn dark sm" href="#contact">카카오 상담</a>
+    </div>
   </div>
 </header>
 <main>
-
-<!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
@@ -100,195 +111,129 @@
       <h1>세상에 하나뿐인<br><span>내 아이의 하네스</span></h1>
       <p class="lead">정키독은 옷장 속 잠든 옷과 특별한 원단에 감각적인 리폼을 더해, 반려견의 체형·성격·분위기에 맞춘 하네스를 만듭니다.</p>
       <p class="micro">리폼 · 업사이클링 · 시그니처 하네스 · 원데이 클래스</p>
-      <div class="actions">
-        <a class="btn dark" href="#reform">리폼 의뢰하기</a>
-        <a class="btn" href="#signature">하네스 보기</a>
-      </div>
+      <div class="actions"><a class="btn dark" href="#reform">리폼 의뢰하기</a><a class="btn" href="#signature">하네스 보기</a></div>
     </div>
     <div class="hero-card">
-      <img src="정키독의 모델.jpg" alt="정키독 하네스를 입은 강아지">
-      <div class="seal">
-        <img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG symbol">
-        <b>JUNGKYDOG RE:FORM</b><br>입는 순간, 우리 아이답게.
-      </div>
+      <img src="맞춤 설계(리폼한 하네스를 입고 산책).jpg" alt="리폼한 하네스를 입고 산책하는 반려견">
+      <div class="seal"><img src="정키독 심볼마크-2.jpg" alt="JUNGKYDOG 심볼"><b>JUNGKYDOG RE:FORM</b><br>입는 순간, 우리 아이답게.</div>
     </div>
   </div>
   <div class="wrap chips">
-    <div class="chip"><b>리폼 아틀리에</b><small>잠든 옷과 원단에 새 생명을</small></div>
-    <div class="chip"><b>감각적 디자인</b><small>수선이 아닌 분위기 리디자인</small></div>
-    <div class="chip"><b>맞춤 설계</b><small>체형과 산책 습관을 고려</small></div>
-    <div class="chip"><b>따뜻한 가치</b><small>보호와 지속가능성을 함께</small></div>
+    <div class="chip"><div class="cnum">01</div><b>리폼 아틀리에</b><small>잠든 옷과 원단에 새 생명을</small></div>
+    <div class="chip"><div class="cnum">02</div><b>감각적 디자인</b><small>수선이 아닌 분위기 리디자인</small></div>
+    <div class="chip"><div class="cnum">03</div><b>맞춤 설계</b><small>체형과 산책 습관을 고려</small></div>
+    <div class="chip"><div class="cnum">04</div><b>따뜻한 가치</b><small>보호와 지속가능성을 함께</small></div>
   </div>
 </section>
 
-<!-- REFORM -->
 <section id="reform" class="section">
-  <div class="wrap split">
-    <div class="process-grid">
-      <img src="리폼 아틀리에(정교한 수작업 리폼).jpg" alt="정교한 수작업 리폼">
-      <img src="리폼 아틀리에(새 생명을 얻은 하나뿐인 하네스).jpg" alt="새 생명을 얻은 하네스">
-      <img src="리폼 아틀리에(오래된 옷과 원단의 재발견).jpg" alt="오래된 원단의 재발견">
-      <img src="맞춤설계(정확한 사이즈 1_1 측정).jpg" alt="1:1 사이즈 측정">
-    </div>
+  <div class="wrap split media-lg">
+    <div class="photo big"><img src="리폼 아틀리에(정교한 수작업 리폼).jpg" alt="정키독 정교한 수작업 리폼"></div>
     <div>
       <div class="eyebrow">MAIN SERVICE</div>
       <h2>정키독의 중심은<br><span>리폼과 업사이클링</span></h2>
-      <p class="muted">아기옷이라는 단어보다 중요한 건 '기억이 담긴 소재를 우리 아이에게 어울리는 형태로 다시 태어나게 하는 것'입니다. 정키독은 단순 수선이 아니라 소재 선택, 컬러 균형, 패치와 자수, 착용감까지 설계합니다.</p>
+      <p class="muted">중요한 건 ‘기억이 담긴 소재를 우리 아이에게 어울리는 형태로 다시 태어나게 하는 것’입니다. 정키독은 단순 수선이 아니라 소재 선택, 컬러 균형, 패치와 자수, 착용감까지 설계합니다.</p>
       <div class="list">
-        <div>의뢰 상담: 아이 체형·성격·사용 목적 확인</div>
-        <div>디자인 제안: 원단, 배색, 포인트, 이름 자수 구성</div>
-        <div>제작: 안전한 구조와 편안한 착용감 중심 제작</div>
-        <div>완성: 착용 사진, 관리법, 다음 리폼 제안까지 연결</div>
+        <div><span class="n">01</span><span>의뢰 상담 · 아이 체형·성격·사용 목적 확인</span></div>
+        <div><span class="n">02</span><span>디자인 제안 · 원단, 배색, 포인트, 이름 자수 구성</span></div>
+        <div><span class="n">03</span><span>제작 · 안전한 구조와 편안한 착용감 중심 제작</span></div>
+        <div><span class="n">04</span><span>완성 · 착용 사진, 관리법, 다음 리폼 제안까지 연결</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY JUNGKYDOG -->
-<section class="section dark">
+<section id="custom" class="section dark">
   <div class="wrap center">
-    <div class="eyebrow">WHY JUNGKYDOG</div>
-    <h2>정키독이 이기는 기술은<br>손끝의 감각입니다</h2>
-    <p class="muted">큰 브랜드가 따라오기 어려운 영역은 속도가 아니라, 한 마리 한 마리에게 맞추는 섬세함입니다.</p>
+    <div class="eyebrow">CUSTOM DESIGN</div>
+    <h2>한 마리 한 마리에게<br><span>맞추는 섬세함</span></h2>
+    <p class="muted">큰 브랜드가 따라오기 어려운 영역은 속도가 아니라, 우리 아이에게 꼭 맞추는 손끝의 감각입니다.</p>
     <div class="cards">
-      <article class="card">
-        <div class="num">01</div>
-        <h3>리폼 기술</h3>
-        <p class="muted">옷의 구조를 해체하고 하네스 구조로 다시 설계합니다.</p>
-      </article>
-      <article class="card">
-        <div class="num">02</div>
-        <h3>디자인 감각</h3>
-        <p class="muted">원단 조합, 색감, 포인트 하나로 제품의 분위기를 만듭니다.</p>
-      </article>
-      <article class="card">
-        <div class="num">03</div>
-        <h3>의뢰 경험</h3>
-        <p class="muted">상담부터 완성까지 고객이 브랜드를 함께 만드는 경험을 줍니다.</p>
-      </article>
+      <article class="card"><img class="cimg" src="맞춤설계(정확한 사이즈 1_1 측정).jpg" alt="정확한 사이즈 1:1 측정"><div class="num">01</div><h3>1:1 정밀 측정</h3><p class="muted">아이의 체형을 직접 측정해 꼭 맞는 사이즈를 설계합니다.</p></article>
+      <article class="card"><img class="cimg" src="맞춤 설계(편안함과 안정감을 교감).jpg" alt="편안함과 안정감을 교감"><div class="num">02</div><h3>편안함 설계</h3><p class="muted">활동성과 안정감을 함께 고려한 착용감 중심 구조.</p></article>
+      <article class="card"><img class="cimg" src="리폼 아틀리에(오래된 옷과 원단의 재발견).jpg" alt="오래된 옷과 원단의 재발견"><div class="num">03</div><h3>소재 재발견</h3><p class="muted">오래된 옷과 원단을 우리 아이만의 하네스로 다시 제안합니다.</p></article>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO GALLERY -->
-<section class="section">
-  <div class="wrap center">
-    <div class="eyebrow">PORTFOLIO</div>
-    <h2>정키독의 작업들</h2>
-    <p class="muted">설계, 드로잉, 원단 선택, 제작 — 모든 단계가 정키독만의 방식입니다.</p>
-    <div class="gallery-grid">
-      <img src="감각적 디자인(감성적인 디자인 드로잉).jpg" alt="감성적인 디자인 드로잉">
-      <img src="감각적 디자인(무드보드 영감의 시작).jpg" alt="무드보드 영감의 시작">
-      <img src="감각적 디자인(디자인 드로잉에 맞는 소재와 컬러의 감각적 조화).jpg" alt="소재와 컬러의 감각적 조화">
-      <img src="맞춤 설계(편안함과 안정감을 교감).jpg" alt="편안함과 안정감을 교감">
-      <img src="맞춤 설계(리폼한 하네스를 입고 산책).jpg" alt="리폼 하네스를 입고 산책">
-      <img src="리폼 아틀리에(정교한 수작업)-1.jpg" alt="정교한 수작업">
-    </div>
-  </div>
-</section>
-
-<!-- SIGNATURE HARNESS -->
 <section id="signature" class="section">
   <div class="wrap center">
     <div class="eyebrow">SIGNATURE HARNESS</div>
-    <h2>정키독 시그니처 하네스</h2>
-    <p class="muted">완제품 판매는 입문 상품, 리폼 의뢰는 핵심 매출. 스마트스토어와 홈페이지가 자연스럽게 이어지는 구조입니다.</p>
+    <h2>정키독 <span>시그니처 하네스</span></h2>
+    <p class="muted">완제품은 입문 상품, 리폼 의뢰는 핵심. 스마트스토어와 홈페이지가 자연스럽게 이어집니다.</p>
     <div class="product-grid">
-      <article class="product">
-        <img src="미니언즈 하네스.jpg" alt="미니언즈 하네스">
-        <div><b>Classic Reform</b><p class="muted">가장 정키독다운 기본 라인</p></div>
-      </article>
-      <article class="product">
-        <img src="슈퍼맨 하네스.jpg" alt="슈퍼맨 하네스">
-        <div><b>Patch Point</b><p class="muted">자수·패치로 완성하는 포인트</p></div>
-      </article>
-      <article class="product">
-        <img src="우주선 하네스.jpg" alt="우주선 하네스">
-        <div><b>Upcycle Limited</b><p class="muted">소재가 한정된 리미티드 제작</p></div>
-      </article>
-      <article class="product">
-        <img src="정키독3종세트하네스.jpg" alt="정키독 3종 세트 하네스">
-        <div><b>Walk Set</b><p class="muted">하네스와 리드줄 세트 제안</p></div>
-      </article>
+      <article class="product"><img src="미니언즈 하네스.jpg" alt="미니언즈 하네스"><div><b>미니언즈</b></div></article>
+      <article class="product"><img src="슈퍼맨 하네스.jpg" alt="슈퍼맨 하네스"><div><b>슈퍼맨</b></div></article>
+      <article class="product"><img src="우주선 하네스.jpg" alt="우주선 하네스"><div><b>우주선</b></div></article>
+      <article class="product"><img src="정키독3종세트하네스.jpg" alt="정키독 3종 세트 하네스"><div><b>3종 세트</b></div></article>
+    </div>
+    <div class="actions" style="justify-content:center;margin-top:34px">
+      <!-- TODO: 스마트스토어 실제 주소로 교체 -->
+      <a class="btn dark" href="https://smartstore.naver.com/jungkydog" target="_blank" rel="noopener">스마트스토어에서 구매</a>
     </div>
   </div>
 </section>
 
-<!-- UPCYCLING -->
 <section id="upcycling" class="section">
-  <div class="wrap split">
-    <div class="photo">
-      <img src="따뜻한 가치(버려질 뻔한 방화복의 재탄생).jpg" alt="방화복의 재탄생">
-    </div>
+  <div class="wrap split media-lg right">
     <div>
       <div class="eyebrow">UPCYCLE PREMIUM</div>
       <h2>버려진 것이 아니라<br><span>다시 태어나는 가치</span></h2>
       <p class="muted">업사이클링은 저렴한 대체재가 아니라 이야기가 있는 소재를 더 가치 있게 바꾸는 작업입니다. 정키독은 방화복, 셔츠, 데님, 트위드, 체크 원단을 반려견의 일상에 어울리는 하네스로 제안합니다.</p>
-      <div class="quote">"흔한 제품보다<br>우리 아이에게 어울리는 것."</div>
+      <p class="quote">“흔한 제품보다<br>우리 아이에게 어울리는 것.”</p>
     </div>
+    <div class="photo big"><img src="따뜻한 가치(버려진 방화복의 재탄생과정).jpg" alt="버려진 방화복의 재탄생 과정"></div>
   </div>
 </section>
 
-<!-- CLASS -->
 <section id="class" class="section dark">
   <div class="wrap center">
     <div class="eyebrow">ONE DAY CLASS</div>
-    <h2>원데이 클래스는<br>정키독의 팬을 만드는 공간</h2>
+    <h2>원데이 클래스는<br><span>정키독의 팬을 만드는 공간</span></h2>
     <p class="muted">작은 패치 만들기, 리드줄 꾸미기, 미니 리폼 체험을 통해 고객이 브랜드에 오래 머무르게 만듭니다.</p>
     <div class="cards">
-      <article class="card">
-        <div class="num">01</div>
-        <h3>패치 클래스</h3>
-        <p class="muted">우리 아이 이름·상징을 담은 포인트 제작</p>
-      </article>
-      <article class="card">
-        <div class="num">02</div>
-        <h3>리폼 상담회</h3>
-        <p class="muted">가져온 옷을 제품화할 수 있는지 상담</p>
-      </article>
-      <article class="card">
-        <div class="num">03</div>
-        <h3>브랜드 데이</h3>
-        <p class="muted">촬영, 후기, 재방문 혜택으로 연결</p>
-      </article>
+      <article class="card"><div class="num">01</div><h3>패치 클래스</h3><p class="muted">우리 아이 이름·상징을 담은 포인트 제작</p></article>
+      <article class="card"><div class="num">02</div><h3>리폼 상담회</h3><p class="muted">가져온 옷을 제품화할 수 있는지 상담</p></article>
+      <article class="card"><div class="num">03</div><h3>브랜드 데이</h3><p class="muted">촬영, 후기, 재방문 혜택으로 연결</p></article>
     </div>
   </div>
 </section>
 
-<!-- BRAND STORY -->
 <section id="story" class="section">
   <div class="wrap split">
-    <div class="panel">
-      <img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG RE:FORM symbol">
-    </div>
+    <div class="panel"><img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG RE:FORM 심볼마크"></div>
     <div>
       <div class="eyebrow">BRAND STORY</div>
       <h2>정키독은 작은 손길에서<br><span>브랜드가 됩니다</span></h2>
-      <p class="muted">정키독의 심볼은 슈나이저와 러시안블루가 서로 기대어 있는 모습입니다. 보호, 조화, 신뢰, 따뜻함을 담아 리폼과 업사이클링의 가치를 시각적으로 보여줍니다.</p>
+      <p class="muted">정키독의 심볼은 슈나우저와 러시안블루가 서로 기대어 있는 모습입니다. 보호, 조화, 신뢰, 따뜻함을 담아 리폼과 업사이클링의 가치를 시각적으로 보여줍니다.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
   <div class="wrap cta">
     <div class="eyebrow">CONTACT</div>
-    <h2>우리 아이에게 어울리는 하네스를 의뢰하세요</h2>
+    <h2>우리 아이에게 어울리는<br>하네스를 의뢰하세요</h2>
     <p>리폼 상담, 업사이클링 제작, 원데이 클래스 예약을 한 곳에서 시작하세요.</p>
     <div class="actions" style="justify-content:center">
       <a class="btn dark" href="mailto:swelljung@gmail.com">이메일 문의</a>
-      <a class="btn" style="color:#fff;border-color:#fff" href="#signature">제품 보기</a>
+      <!-- TODO: 인스타그램 / 스마트스토어 / 카카오 채널 실제 주소로 교체 -->
+      <a class="btn" href="https://www.instagram.com/amanjungky" target="_blank" rel="noopener">인스타그램</a>
+      <a class="btn" href="https://smartstore.naver.com/jungkydog" target="_blank" rel="noopener">스마트스토어</a>
     </div>
   </div>
 </section>
 </main>
 <footer class="footer">
   <div class="wrap footer-inner">
-    <div class="brand">
-      <img src="정키독 심볼마크-1.jpg" alt="JUNGKYDOG RE:FORM">
-      <span>JUNGKYDOG</span>
+    <div class="brand"><img src="정키독 심볼마크-2.jpg" alt="JUNGKYDOG RE:FORM"><span>JUNGKYDOG</span></div>
+    <div style="max-width:420px;color:#cfc9c0">프리미엄 반려견 하네스 · 리폼 · 업사이클링 · 원데이 클래스</div>
+    <div class="footer-links">
+      <a href="mailto:swelljung@gmail.com">이메일</a>
+      <a href="https://www.instagram.com/amanjungky" target="_blank" rel="noopener">인스타그램</a>
+      <a href="https://smartstore.naver.com/jungkydog" target="_blank" rel="noopener">스마트스토어</a>
+      <a href="#contact">카카오 채널</a>
     </div>
-    <div>프리미엄 반려견 하네스 · 리폼 · 업사이클링 · 원데이 클래스</div>
   </div>
 </footer>
 </body>
