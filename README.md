@@ -92,7 +92,7 @@ start index.html
 
 ## 다음 작업
 
-- [ ] 실제 주소·운영시간 반영
+- [x] 실제 주소 반영 (시흥시 신천동) / [ ] 운영시간 반영
 - [ ] AI 컨셉 이미지를 실제 촬영본으로 순차 교체
 - [ ] 고객 후기 / 제작 일기 실제 콘텐츠 연결
-- [ ] GitHub Private 리포 + Cloudflare Pages 배포
+- [x] GitHub 리포 + Netlify 배포
