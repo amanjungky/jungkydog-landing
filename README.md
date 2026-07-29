@@ -1,92 +1,98 @@
-# 청담펫부티크 · 정키독 랜딩페이지
+# 정키독 JUNGKYDOG RE:FORM · 공식 홈페이지
 
-> 프리미엄 반려견 용품 및 업사이클링
+> 프리미엄 반려동물 하네스 아틀리에 · 리폼 / 업사이클링 / 핸드메이드 클래스
 
 꿈마루 창업가 랜딩페이지 프로젝트 · 정훈숙 대표
 
 ## 프로젝트 개요
 
-- **브랜드**: 청담펫부티크 (정키독)
-- **슬로건**: 프리미엄 반려견 용품 및 업사이클링
-- **정의**: 사회적 가치와 내 아이의 안전을 동시에 챙기는 브랜드 — 안전·편안함·유니크한 디자인
-- **주력 제품**: 반려견 하네스 (테마 자수 시리즈)
-- **주요 목적**: ⭐ **잠재고객 DB 수집** (뉴스레터 구독)
-- **참고 레퍼런스**: 프라이탁·파타고니아·와일드원·플리츠마마
+- **브랜드**: 정키독 (JUNGKYDOG RE:FORM)
+- **브랜드 정의**: "우리는 하네스를 만드는 브랜드가 아닙니다. 우리는 우리 아이와 함께하는 시간을 디자인합니다."
+- **핵심 가치**: RE:FORM · HANDCRAFT · COMFORT · SAFETY
+- **미션**: Protect Memories. Protect Pets. Protect Earth.
+- **주력 서비스**: 맞춤 리폼 의뢰 · 업사이클링(폐방화복) · 시그니처 하네스 · 핸드메이드 클래스
 
-## 섹션 구성 (9섹션 · DB 수집 최적화)
+## 카테고리 구성
 
-1. **Nav** — 로고 + "소식 받기" CTA 고정
-2. **Hero** — 슬로건 + 대표 제품 이미지 + 뉴스레터 유도 버튼
-3. **Story** — 브랜드 스토리 + 폐방화복 업사이클링 정체성
-4. **Products** — 시그니처 하네스 4종 (고해상도 신규 사진)
-5. **Values** — 3가지 약속 (안전·편안함·유니크)
-6. **Craft** — 폐방화복 업사이클링 4단계 (실제 공방 사진)
-7. **Mission** ⭐ — 유기견 봉사 + 사회적 가치
-8. **Newsletter** ⭐ — Google Forms 임베드 · 메인 DB 수집
-9. **Contact** — 스마트스토어·블로그·이메일
+`홈페이지카테고리` 시안의 7개 카테고리를 그대로 반영한 원페이지 구조입니다.
+
+| 순서 | 카테고리 | 앵커 | 내용 |
+|---|---|---|---|
+| — | Hero | `#home` | 브랜드 선언 + 핵심 가치 4종 |
+| 1 | **ABOUT** | `#about` | 01 브랜드 소개 · 02 철학 · 03 미션 · 04 대표 이야기 |
+| 2 | **COLLECTION** | `#collection` | 시그니처/시즌/제품상세 + 시그니처 하네스 4종 |
+| 3 | **RE:FORM** | `#reform` | 맞춤 리폼 의뢰 · 제작 과정 · Before&After · 상담 신청 |
+| 4 | **UPCYCLING** | `#upcycling` | 소방복 프로젝트 · 업사이클링 철학 · 소재 이야기 · 환경 가치 + 실제 작업 현장 |
+| 5 | **CLASS** | `#class` | 원데이 클래스 · 정규 클래스 · 예약 |
+| 6 | **STORY** | `#story` | 고객 후기 · 제작 일기 · 봉사활동 · 브랜드 뉴스 |
+| 7 | **CONTACT** | `#contact` | 카카오 상담 · 위치 · 운영시간 · 문의 |
 
 ## 이미지 자산
 
 ```
 images/
-├─ logo.png            로고 (네비/푸터)
-├─ logo-mark.jpg       로고 마크 (신규, 예비)
-├─ favicon.png
-├─ products/           시그니처 4종 (1600px, 80% JPEG)
-│  ├─ rocket.jpg / superman.jpg / minions.jpg / set.jpg
-└─ craft/              업사이클링 + 미션 사진
-   ├─ design.jpg       폐방화복 디자인 스케치
-   ├─ workshop.jpg     공방 작업 전경
-   ├─ sewing.jpg       봉제 작업
-   ├─ result.jpg       완성된 하네스
-   └─ rescue.jpg       유기견 봉사 활동
+├─ favicon.png          파비콘
+├─ logo.png             로고 (예비)
+├─ logo-mark.jpg        로고 마크 (예비)
+├─ products/            시그니처 하네스 실제 제품 사진
+│  └─ rocket.jpg / superman.jpg / minions.jpg / set.jpg
+├─ craft/               실제 공방·봉사 사진
+│  ├─ design.jpg        원단 선정과 디자인 설계
+│  ├─ workshop.jpg      폐방화복 업사이클링 공방
+│  ├─ sewing.jpg        봉제 작업 현장
+│  ├─ result.jpg        완성 하네스 착용
+│  └─ rescue.jpg        유기견 봉사 활동
+└─ cat/                 카테고리 시안(PNG)에서 잘라낸 카드 사진
+   ├─ about-hero.jpg / about-philosophy.jpg / about-founder.jpg
+   ├─ mission-1~3.jpg
+   ├─ col-1~3.jpg / reform-1~4.jpg / upcycle-1~4.jpg
+   └─ class-1~3.jpg / story-1~4.jpg / contact-1~4.jpg
 ```
 
-## 컬러 시스템 (로고 기반)
+`images/cat/`은 원본 시안 PNG(약 2MB/장)에서 사진 영역만 잘라 웹용 JPEG로 변환한 것입니다.
+시안에 글자가 박혀 있던 부분은 이미지로 넣지 않고 전부 HTML 텍스트로 다시 작성했습니다.
 
-| 역할 | 변수 | 값 | 출처 |
-|---|---|---|---|
-| 메인 포인트 | `--sky` | `#5FA8E0` | 로고 "정키독" 글자 |
-| 강조 | `--crown-red` | `#E64545` | 로고 왕관 |
-| 액센트 | `--sun` | `#F5C544` | 제품 자수 노랑 |
-| 텍스트 | `--ink` | `#1A1A1A` | 로고 외곽선 |
-| 배경 | `--paper` | `#FFFFFF` | 하얀색 |
+## 컬러 시스템 (시안 기준)
+
+| 역할 | 변수 | 값 |
+|---|---|---|
+| 배경 (아이보리) | `--ivory` | `#F5F2ED` |
+| 배경 교차 | `--ivory-2` | `#EFEAE2` |
+| 카드 | `--card` | `#FBFAF8` |
+| 제목·네비 | `--navy` | `#1B2B4B` |
+| 아이콘·번호 | `--gold` | `#A8916C` |
+| 버튼 (브라운) | `--brown` | `#8C7454` |
+| 본문 | `--ink` / `--muted` | `#1E1C1A` / `#77706A` |
 
 ## 폰트
 
-- **본문/제목**: Pretendard Variable (모던 한글)
-- **영문 포인트**: Playfair Display (italic, 소제목)
-- **손글씨 액센트**: Gochi Hand (로고 정체성 반영)
+- **본문/제목**: Pretendard Variable (CDN)
+- **넘버링·영문 디스플레이**: Georgia (serif)
 
-## ⚠️ 대표님 조치 필요
+## ⚠️ 대표님 확인 필요
 
-### 1. Google Forms 생성 후 교체
-
-`index.html` 안의 Newsletter 섹션에 **iframe src**가 `about:blank`으로 비어있어요.
-
-**절차**:
-1. [Google Forms](https://forms.google.com) 새 폼 생성
-2. 받을 정보 필드: 이메일(필수) · 반려견 이름 · 관심 제품 · 기타
-3. 우측 상단 **"보내기"** → `< >` 아이콘(임베드)
-4. 표시되는 `<iframe src="..."`의 **src 값만** 복사
-5. `index.html`에서 `id="gform"` 찾아 `src="about:blank"`을 복사한 주소로 교체
-
-교체 전까지는 **"Google Forms 임베드 준비 완료"** 안내 박스가 대신 표시됩니다.
+1. **CONTACT 위치** — 시안(CONTACT.png)에 적힌 주소는 예시입니다.
+   실제 주소를 알려주시면 `index.html`의 `<!-- 실제 주소를 확인 후 ... -->` 주석 부분을 교체합니다.
+2. **운영시간** — 현재 "월–토 10:00–19:00 (일·공휴일 휴무)"로 표기했습니다. 실제와 다르면 알려주세요.
+3. **카드 사진** — 시안 사진 다수가 AI 생성 컨셉 이미지입니다.
+   실제 촬영본이 준비되는 대로 `images/cat/` 파일만 같은 이름으로 교체하면 됩니다.
 
 ## 연결된 채널
 
 - 스마트스토어: https://smartstore.naver.com/jungkydog
-- 블로그: https://blog.naver.com/jungkydog
+- 카카오 채널: https://pf.kakao.com/_pyexfX
+- 인스타그램: https://www.instagram.com/amanjungky
 - 이메일: swelljung@gmail.com
 
 ## 로컬 확인
 
 ```bash
-open index.html
+start index.html
 ```
 
 ## 다음 작업
 
-- [ ] 대표님께 Google Forms 생성 요청 → iframe src 교체
-- [ ] 추가 제품 사진 받으면 Products 섹션 확장
+- [ ] 실제 주소·운영시간 반영
+- [ ] AI 컨셉 이미지를 실제 촬영본으로 순차 교체
+- [ ] 고객 후기 / 제작 일기 실제 콘텐츠 연결
 - [ ] GitHub Private 리포 + Cloudflare Pages 배포
