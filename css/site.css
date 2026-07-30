@@ -153,7 +153,7 @@ h2.ink{color:var(--ink)}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:54px}
 .product{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
 .product .ph{background:#F6F4F1}
-.product .ph img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.product .ph img{width:100%;aspect-ratio:413/520;object-fit:contain}
 .product .body{padding:24px 22px 26px;flex:1;display:flex;flex-direction:column}
 .product .tag{font-family:var(--serif);font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
 .product .en{font-family:var(--serif);font-size:24px;color:var(--navy);letter-spacing:.01em;margin:6px 0 2px}
