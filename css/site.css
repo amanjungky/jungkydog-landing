@@ -16,6 +16,7 @@ body{
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 .wrap{width:min(1240px,92vw);margin:0 auto}
+.products[hidden]{display:none!important}
 
 /* ── NAV ── */
 .nav{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #EDE8E0}
