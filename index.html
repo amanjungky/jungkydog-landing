@@ -214,7 +214,7 @@
     </div>
 
     <div class="tiles c3">
-      <article class="tile p57">
+      <article class="tile p57" id="signatureToggle" role="button" tabindex="0" aria-expanded="false">
         <div class="ph"><img src="images/cat/col-1.jpg" alt="시그니처 하네스를 착용한 슈나우저" /></div>
         <div class="body">
           <svg><use href="#i-harness"/></svg>
@@ -240,7 +240,7 @@
       </article>
     </div>
 
-    <div class="products">
+    <div class="products" id="signatureProducts" hidden>
       <article class="product">
         <div class="ph"><img src="images/products/rocket.png" alt="로켓 하네스 세트" /></div>
         <div class="body">
@@ -579,6 +579,22 @@
     if (e.target.tagName === 'A') {
       menu.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+  var signatureToggle = document.getElementById('signatureToggle');
+  var signatureProducts = document.getElementById('signatureProducts');
+
+  function toggleSignatureProducts() {
+    var isOpen = !signatureProducts.hidden;
+    signatureProducts.hidden = isOpen;
+    signatureToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  }
+
+  signatureToggle.addEventListener('click', toggleSignatureProducts);
+  signatureToggle.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleSignatureProducts();
     }
   });
 })();
