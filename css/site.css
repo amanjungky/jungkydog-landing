@@ -74,6 +74,11 @@ h2.ink{color:var(--ink)}
 .btn.insta{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);border-color:transparent;color:#fff}
 .btn.sm{height:42px;padding:0 20px;font-size:13px}
 .btn.brown{background:#8C7454;border-color:#8C7454;color:#fff}
+.btn.kakao{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn.naver{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn.insta{background:var(--gold);border-color:var(--gold);color:#fff}
+#contact .btn.naver{background:#8FD3F4;border-color:#8FD3F4;color:var(--navy)}
+#contact .btn.insta{background:#fff;border-color:var(--gold);color:var(--navy)}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .actions.center{justify-content:center}
 
